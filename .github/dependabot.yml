@@ -1,0 +1,33 @@
+# To get started with Dependabot version updates, you'll need to specify which
+# package ecosystems to update and where the package manifests are located.
+# Please see the documentation for all configuration options:
+# https://docs.github.com/code-security/dependabot/dependabot-version-updates/configuration-options-for-the-dependabot.yml-file
+
+version: 2  # TODO: Rebuild this file with the Dependabot config generator
+registries:
+  alliander-artifactory:
+    type: python-index
+    url: https://alliander.jfrog.io/artifactory/api/pypi/pypi-all/simple
+    username: ${{ secrets.JFROG_USER }}
+    password: ${{ secrets.JFROG_PASSWORD }}
+updates:
+  - package-ecosystem: "pip" # `pip` also enables Poetry
+    reviewers:
+      - "Alliander/verbindingsteam"
+    directory: "/" # Location of package manifests
+    registries:
+      - alliander-artifactory
+    insecure-external-code-execution: allow # Required for private registries: https://docs.github.com/en/code-security/dependabot/dependabot-version-updates/configuration-options-for-the-dependabot.yml-file#insecure-external-code-execution
+    schedule:
+      interval: "weekly"
+    groups:
+      package-updates:
+        applies-to: version-updates
+        patterns: [ "*" ]
+
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    reviewers:
+      - "Alliander/verbindingsteam"
+    schedule:
+      interval: "weekly"

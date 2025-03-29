@@ -5,6 +5,9 @@ description = "The Weather Provider Libraries for the Weather Provider Access Su
 authors = ["Raoul Linnenbank <58594297+rflinnenbank@users.noreply.github.com>"]
 license = "MPL2.0"
 readme = "README.rst"
+packages = [
+    { include = "weather_provider_libraries", from = "./src/weather_provider_libraries" },
+]
 
 [tool.poetry.dependencies]
 python = "^3.12"
@@ -104,7 +107,7 @@ ignore = [
 "conftest.py" = ["E501"]
 
 [tool.mypy]
-packages = ["vbd_alise_api"]
+packages = ["weather_provider_libraries"]
 exclude = ["migrations"]
 
 [tool.pytest.ini_options]

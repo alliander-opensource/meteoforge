@@ -1,0 +1,54 @@
+name: Bug Report
+description: File a bug report.
+title: "[Bug]: "
+labels: [ "bug" ]
+projects: [ "weather-provider-libraries-v3" ]
+assignees:
+  - rflinnenbank
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for taking the time to fill out this bug report!
+  - type: input
+    id: contact
+    attributes:
+      label: Contact Details
+      description: How can we get in touch with you if we need more info?
+      placeholder: ex. email@example.com
+    validations:
+      required: false
+  - type: textarea
+    id: what-happened
+    attributes:
+      label: Please tell us what happened?
+      description: Also tell us, what did you expect to happen?
+      placeholder: Tell us what you see or experience when the bug occurs!
+      value: "Something did not work right!"
+    validations:
+      required: true
+  - type: dropdown
+    id: version
+    attributes:
+      label: Version
+      description: What version of our software are you running?
+      options:
+        - 3.0.xx (Current)
+        - 3.1.xx (Beta)
+      default: 0
+    validations:
+      required: true
+  - type: textarea
+    id: logs
+    attributes:
+      label: Relevant log output
+      description: Please copy and paste any relevant log output. This will be automatically formatted into code, so no need for backticks.
+      render: shell
+  - type: checkboxes
+    id: terms
+    attributes:
+      label: Code of Conduct
+      description: By submitting this issue, you agree to follow our [Code of Conduct](https://github.com/alliander-opensource/weather-provider-libraries/blob/main/CODE_OF_CONDUCT.rst).
+      options:
+        - label: I agree to follow this project's Code of Conduct
+          required: true

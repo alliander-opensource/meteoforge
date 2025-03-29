@@ -3,25 +3,25 @@
 .. SPDX-License-Identifier: MPL-2.0
 
 .. image:: https://img.shields.io/badge/License-MPL2.0-informational.svg
-   :target: https://github.com/alliander-opensource/weather-provider-libraries/LICENSE.md
+   :target: https://github.com/Alliander/rflinnenbank-trial-zone/LICENSE.md
    :alt: License: MIT
 .. image:: https://sonarcloud.io/api/project_badges/measure?project=alliander-opensource_weather-provider-libraries&metric=alert_status
-   :target: https://sonarcloud.io/summary/new_code?id=alliander-opensource_weather-provider-libraries
+   :target: https://sonarcloud.io/summary/new_code?id=Alliander_rflinnenbank-trial-zone
    :alt: Quality Gate Status
 .. image:: https://sonarcloud.io/api/project_badges/measure?project=alliander-opensource_weather-provider-libraries&metric=sqale_rating
-   :target: https://sonarcloud.io/summary/new_code?id=alliander-opensource_weather-provider-libraries
+   :target: https://sonarcloud.io/summary/new_code?id=Alliander_rflinnenbank-trial-zone
    :alt: Maintainability Rating
 .. image:: https://sonarcloud.io/api/project_badges/measure?project=alliander-opensource_weather-provider-libraries&metric=security_rating
-   :target: https://sonarcloud.io/summary/new_code?id=alliander-opensource_weather-provider-libraries
+   :target: https://sonarcloud.io/summary/new_code?id=Alliander_rflinnenbank-trial-zone
    :alt: Security Rating
 .. image:: https://sonarcloud.io/api/project_badges/measure?project=alliander-opensource_weather-provider-libraries&metric=vulnerabilities
-   :target: https://sonarcloud.io/summary/new_code?id=alliander-opensource_weather-provider-libraries
+   :target: https://sonarcloud.io/summary/new_code?id=Alliander_rflinnenbank-trial-zone
    :alt: Vulnerabilities
 .. image:: https://sonarcloud.io/api/project_badges/measure?project=alliander-opensource_weather-provider-libraries&metric=bugs
-   :target: https://sonarcloud.io/summary/new_code?id=alliander-opensource_weather-provider-libraries
+   :target: https://sonarcloud.io/summary/new_code?id=Alliander_rflinnenbank-trial-zone
    :alt: Bugs
 .. image:: https://sonarcloud.io/api/project_badges/measure?project=alliander-opensource_weather-provider-libraries&metric=coverage
-   :target: https://sonarcloud.io/summary/new_code?id=alliander-opensource_weather-provider-libraries
+   :target: https://sonarcloud.io/summary/new_code?id=Alliander_rflinnenbank-trial-zone
    :alt: Coverage
 
 #############################
