@@ -24,92 +24,153 @@
    :target: https://sonarcloud.io/summary/new_code?id=alliander-opensource_weather-provider-libraries
    :alt: Coverage
 
-#############################
-Weather Provider Access Suite
-#############################
-
-=================================================
-An introduction to the Weather Provider Libraries
-=================================================
-.. image:: /docs/images/wpas_logo.svg
-    :alt: Weather Provider Access Suite
+.. image:: ./docs/logo/meteoforge_logo.png
+    :alt: MeteoForge
     :align: center
-    :width: 50%
+    :width: 25%
 
----------------------------------------------
-What is the Weather Provider Libraries (WPL)?
----------------------------------------------
+Index:
+======
+- `On the MeteoForge project <#on_the_meteoforge_project>`_
+- `A bit more information on MeteoForge: Libraries <#a_bit_more_information_on_meteoforge>`_
+- `How to install <#how_to_install>`_
+- `More information? <#more_information>`_
+- `View License <./LICENSE.md>`_
 
-^^^^^^^^^^^^
-Project Goal
-^^^^^^^^^^^^
-The Weather Provider Libraries project is a project with a singular goal in mind::
 
-    Easily accessing any data for a multitude of meteorological datasets and meteorological site-pages
-    without any prior knowledge of those datasets or even their specific content.
+.. _on_the_meteoforge_project:
 
-That is right. Without any prior knowledge of a supported dataset itself, we want you to be able to achieve the
-following:
+On the MeteoForge project:
+==========================
 
-* *Make requests for specific periods and meteorological factors.*
-* *Transform the received data into one of several supported uniform formats, allowing for comparison of data between
-  datasets if the fields are identical in nature.*
-* *Transform the output for those requests into a wide number of commonly used file formats, flattening the output from
-  multi-dimensional data as needed.*
-* *Translate existing dataset output directly into the aforementioned supported uniform data and allow for outputting
-  that result in the supported output file formats as well.*
+The MeteoForge project is the project that evolved from the original Weather Provider API project. It is a project that
+aims to provide a unified interface for accessing and processing meteorological data from various sources. The project
+is designed to be modular and extensible, allowing users to easily add new sources and models as needed. The project
+consists of three main components:
 
-**As a secondary goal, we also wish to achieve the following:**
+1. **The MeteoForge API**
 
-*   For motivated people that have knowledge or affinity with unsupported datasets to build their own compatible model(s)
-    and source(s) without prior knowledge of the WPL system by being guided by the base classes themselves.
+   This component provides a RESTful API for accessing meteorological data from various sources based on FastAPI. It is
+   built on top of the MeteoForge Libraries and provides a unified interface for accessing data from different sources
+   provided by the MeteoForge Sources or other compatible sources made from the base classes of the MeteoForge
+   Libraries. The API is designed to be easy to use and provides a wide range of features for accessing and processing
+   data with minimal configuration. The API is fully compliant with the OpenAPI standard and can be easily deployed
+   using Docker images or custom deployment methods. The API is designed to be scalable and can be easily extended to
+   support new sources and models as needed.
 
-*   Allow for the easy access and plugging of sources and models as desired. You can access the data you want to use
-    without any need for installing more than just a singular source and calling more than just the model you need if
-    that is what you need, while also retaining the possibility to upscale to a multitude of sources and models and
-    even connect those to the `Weather Provider API`_ project for a fully functional API based on your wishes.
+2. **The MeteoForge Libraries**
 
----------------
-Project Origins
----------------
-The Weather Provider Libraries Project, or WPL, as it will be abbreviated a lot in the documentation of this project,
-is a project based on the original "**weather_provider_api**" project found at:
+   This component provides the core functionality for accessing and processing meteorological data. It includes a wide
+   range of tools and libraries for working with meteorological data, including support for various file formats,
+   data transformation, and data processing. The Libraries are designed to be modular and extensible, allowing users to
+   easily add new features and functionality as needed. The Libraries also provide a set of base classes for creating
+   new sources and models, making it easy to integrate new datasets into the system.
 
- `https://github.com/alliander-opensource/weather-provider-api/ <https://github.com/alliander-opensource/weather-provider-api/>`_
+3. **The MeteoForge Sources**
 
-Until version 3.0 of this project, every component thereof was considered a part of a singular whole, but to allow for
-easier usage and the easier building of new models and sources, the project was split up into three components:
+   This component provides a a basic collection of sources for accessing meteorological data from various providers
+   based on the original models constructed for Alliander. Each source is designed to be modular and extensible,
+   allowing collaborators to easily add new models as needed. The sources are designed to be easy to use separately
+   and provide a wide range of features for accessing and processing data and generate their own packages for
+   distribution and installation. Merely installing a source package is enough to use the source and its models both
+   separately and in combination with the API, though further configuration may be needed to use a source in a
+   specific context.
 
-**1. Weather Provider Libraries**
 
-   This project and the part that holds all of the common components and tools responsible for formatting, processing
-   and transforming meteorological data, as well as all of the base classes for creating Models and Sources for the
-   project. Finally the project also houses the Controller which allows for easy configuration and acquisition of data
-   over multiple sources and models.
 
-**2. Weather Provider API**
+.. _a_bit_more_information_on_meteoforge:
 
-   This project houses the API implementation of this project. It uses the Weather Provider Libraries project to
-   transform any connected source and model into appropriate endpoints. This fully functional FastAPI implementation is
-   fully supportive of the OpenAPI standard and can easily be scaled according to your wishes. The project repository
-   even comes with a number of example deployment folders. The project can be used via custom deployment through its
-   package or deployment using the readily available Docker images.
-   For more information on this project please check the Project's repository page at: `Weather Provider API`_
+A bit more information on MeteoForge: Libraries
+===============================================
 
-**3. Weather Provider Sources**
+The goal of the Libraries component:
+------------------------------------
+The goal of the Libraries component is to provide a set of base classes and utilities for accessing and processing
+meteorological data from various sources. The Libraries component is designed to be modular and extensible, allowing
+collaborators to easily add functionality for new sources and models as needed, as well as to provide a set of base
+classes for easily creating new sources and models. The Libraries component is designed to be used in conjunction with
+the API, the Sources component and other compatible sources, and cannot be used separately outside of creating new
+sources and models.
 
-   This project actually consists of multiple repositories. Each repository houses one or multiple Sources that can be
-   installed as packages used separately or from a Weather Provider Libraries system. Each Source can house one or
-   multiple Models, each representing a specific meteorological dataset, site-page with meteorological data, or fusion
-   thereof.
-   For a default set of Weather Provider Sources and a list of other known popular Sources
+The Libraries component is designed to be easy to use and will provide plenty of support for accessing and processing
+data from various sources as well as help you through the process of creating new sources and models.
 
-.. _Weather Provider API: https://github.com/alliander-opensource/weather-provider-api
+How it works:
+-------------
 
------------------
-More information?
------------------
+Sources govern models:
+**********************
 
-for more information, please visit the GitHub Pages at:
+As stated, the MeteoForge project is meant to be modular and extensible, allowing users to easily add new sources and
+models as needed. This means that any number of models should be able to be used in combination with each other.
 
-https://alliander-opensource.github.io/weather-provider-libraries/
+However, similar models with similar functionality may exist for different sources. To allow for this, each model needs
+to be governed by a source. This means that each model is part of a source and cannot be used outside of that source.
+This allows for models under the same name and functionality to be used in combination with each other, while still
+being distinct from each other.
+
+Sources are also able to validate each of their models in one go, allowing for a more efficient way of validating
+models.
+
+Models are generic but unique:
+******************************
+
+While this sounds like a contradiction, it is not.
+The models are generic in the sense that they are designed to be used with the (nearly) same interface for each base
+type of meteorological model, but unique in the sense that every model will need a separate implementation for
+retrieving and formatting the data. So while the interface for each model is the same, and the base implementation
+behind that interface will also be, at the import and configuration level, the models are very unique.
+
+Equalizing the models via ECCODES:
+**********************************
+
+To be able to equalize the models, the Libraries component uses ECCODES. This is a library for decoding and encoding
+GRIB and BUFR files. It is a library that is widely used in the meteorological community and is designed to be fast
+and efficient. ECCODES also has an extensive parameter database that can be used to look up standard parameters and
+their units.
+
+By using this database as a reference and using Pint for unit conversion with such parameters as a base, the Libraries
+component is able to equalize the models and provide a unified interface for accessing and processing meteorological
+factors into standardized unit(s) (systems) and file formats.
+
+An example:
+~~~~~~~~~~~
+
+  A model contains a factor "200 meter wind speed" indicating the wind speed at 200 meters above ground level.
+  This factor is supplied in Beaufort. Looking up the parameter in the ECCODES database, we find that the
+  "200 metre wind speed" is standard parameter 228241 with default unit "m * s^-1" (meters per second).
+
+  The Libraries component only needs to know that the factor is equivalent to the standard parameter 228241 and that the
+  supplied unit is Beaufort. The Libraries component has a register of each standard parameter and its default unit as
+  well as a list of supported unit systems and their target units. The Libraries component can then use to convert the
+  supplied unit to the target unit using Pint.
+
+
+.. _how_to_install:
+
+How to install:
+===============
+Installation can be done via pip or poetry. The Libraries component is available on PyPI and can be installed
+using the following command for pip:
+
+.. code-block:: shell
+
+   pip install meteoforge-libraries
+
+or for poetry:
+
+.. code-block:: shell
+
+   poetry add meteoforge-libraries
+
+.. note:: Installing only the Libraries component is not enough to access models and/or sources in any way.
+          You need to install the API or a source package to access models and/or sources. Both will also install
+          the Libraries component as a dependency.
+
+.. _more_information:
+
+Need a bit more information?
+----------------------------
+
+For a far more extensive source of information, please visit the GitHub Pages at:
+ https://alliander-opensource.github.io/weather-provider-libraries/

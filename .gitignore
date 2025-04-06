@@ -666,3 +666,8 @@ src/weather_provider_sources/
 # All of IDEA really
 .idea/
 !/htmlcov/
+/.vscode/settings.json
+/docs/demo_source/weather_provider_sources/source_example/model_example/__init__.py
+/docs/demo_source/weather_provider_sources/source_example/model_example/model.py
+/docs/demo_source/weather_provider_sources/source_example/__init__.py
+/docs/demo_source/weather_provider_sources/source_example/source.py
