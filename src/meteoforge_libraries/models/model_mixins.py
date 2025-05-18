@@ -2,11 +2,7 @@
 
 #  SPDX-FileCopyrightText: 2019-2025 Alliander N.V.
 #  SPDX-License-Identifier: MPL-2.0
-
 from meteoforge_libraries.formats.locations import ForgeLocation, ForgeLocations, ForgePolygonalArea
-
-#  SPDX-FileCopyrightText: 2019-2025 Alliander N.V.
-#  SPDX-License-Identifier: MPL-2.0
 from meteoforge_libraries.formats.periods import ForgePeriod
 
 """This module contains mixin classes for different types of meteorological model extensions.

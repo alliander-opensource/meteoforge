@@ -5,10 +5,9 @@
 
 from typing import Annotated
 
-from pydantic import BaseModel, StringConstraints
-
 from meteoforge_libraries.formats.annotations import ValidIdentifier, ValidURL
 from meteoforge_libraries.formats.factors import ForgeParameter
+from pydantic import BaseModel, StringConstraints
 
 
 class ForgeModelIdentity(BaseModel):

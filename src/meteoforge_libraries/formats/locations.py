@@ -16,12 +16,10 @@ class ForgePolygonalArea:
     def __init__(self, coordinates: tuple[ForgeLocation, ForgeLocation, ForgeLocation, ...]):
         """Initialize the polygonal area with a list of coordinates.
 
-        Attributes
-        ----------
+        Attributes:
             coordinates (tuple[ForgeLocation, ...]):
                 A tuple of ForgeLocation objects representing the vertices of the polygon.
                 These should be in order, either clockwise or counterclockwise.
-
         """
         self.coordinates = coordinates
 
@@ -32,13 +30,10 @@ class ForgePolygonalArea:
         """Check if a given location is within the polygonal area.
 
         Args:
-        ----
             location (ForgeLocation): The location to check.
 
         Returns:
-        -------
             bool: True if the location is within the polygon, False otherwise.
-
         """
         # Implement point-in-polygon algorithm here
         pass
