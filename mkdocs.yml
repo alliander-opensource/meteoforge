@@ -1,0 +1,34 @@
+site_name: MeteoForge - Core
+site_description: MeteoForge Core is a Python library for the MeteoForge project, which provides a set of tools and utilities for working with weather data.
+site_author: Alliander N.V.
+copyright: Copyright © 2025, Alliander N.V.
+repo_url: https://github.com/alliander-opensource/meteoforge-core
+repo_name: MeteoForge
+docs_dir: docs/gh-pages
+theme: material
+plugins:
+  - search
+  - mkdocstrings:
+      default_handler: python
+      handlers:
+        python:
+          paths: [ src ]  # or wherever your modules live
+markdown_extensions:
+  - admonition
+  - attr_list
+  - codehilite
+  - md_in_html
+  - pymdownx.blocks.caption
+  - pymdownx.superfences
+  - pymdownx.tabbed
+  - pymdownx.details
+nav:
+  - Getting started: 'index.md'
+  - MeteoForge - API: '../api/index.md'
+  - MeteoForge - Sources: '../sources/index.md'
+  - History: 'history.md'
+validation:
+  omitted_files: warn
+  absolute_links: warn  # Or 'relative_to_docs' - new in MkDocs 1.6
+  unrecognized_links: warn
+  anchors: warn  # New in MkDocs 1.6
