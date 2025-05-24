@@ -1,0 +1,3 @@
+# About this project's main developers
+
+...
