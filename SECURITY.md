@@ -1,7 +1,7 @@
 <!--
 SPDX-FileCopyrightText: Alliander N.V.
 
-SPDX-License-Identifier: Apache-2.0
+SPDX-License-Identifier: MPL-2.0
 -->
 
 # Security
