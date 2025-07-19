@@ -1,8 +1,5 @@
 [//]: # (SPDX-FileCopyrightText: 2024-2025 Copyright Contributors to the MeteoForge project)
-<<<<<<< HEAD
-=======
 
->>>>>>> e52db85 (feature<documentation>: Initial base documentation)
 [//]: # (SPDX-License-Identifier: MPL-2.0)
 
 # MeteoForge - Core System
@@ -15,13 +12,9 @@
 [![Bugs](https://sonarcloud.io/api/project_badges/measure?project=alliander-opensource_meteoforge&metric=bugs)](https://sonarcloud.io/summary/new_code?id=alliander-opensource_meteoforge)
 [![Coverage](https://sonarcloud.io/api/project_badges/measure?project=alliander-opensource_meteoforge&metric=coverage)](https://sonarcloud.io/summary/new_code?id=alliander-opensource_meteoforge)
 
-<<<<<<< HEAD
-![MeteoForge logo](/docs/images/meteoforge_logo.png)
-=======
-<p style="text-align: center;">
+<div align="center">
   <img src="/docs/images/meteoforge_logo.png" alt="MeteoForge" width="25%" />
-</p>
->>>>>>> e52db85 (feature<documentation>: Initial base documentation)
+</div>
 
 ## Index
 
@@ -82,11 +75,7 @@ parameters. Unit conversion is handled with [Pint](https://pint.readthedocs.io/)
 > _speed" in m/s._
 > _The Core System can convert Beaufort to m/s using its registry of standard parameters and Pint-based conversions._
 
-<<<<<<< HEAD
-## How to install MeteoForge
-=======
 ## How to install
->>>>>>> e52db85 (feature<documentation>: Initial base documentation)
 
 You can install the MeteoForge Core System via pip or poetry.
 
