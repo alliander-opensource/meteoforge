@@ -16,6 +16,7 @@ repository = "https://github.com/alliander-opensource/meteoforge"
 documentation = "https://github.com/alliander-opensource/meteoforge"
 
 [tool.poetry.dependencies]
+<<<<<<< HEAD
 pyproj = "^3.7.2"
 colorlog = "^6.10.1"
 pydantic = "^2.12.5"
@@ -38,6 +39,26 @@ pytest-cov = "^7.0.0"
 reuse = "^6.2.0"
 types-shapely = "^2.1.0.20250917"
 
+=======
+dask = "^2025.7"
+netcdf4 = "^1.7.2"
+numpy = "^2.3.1"
+pydantic = "^2.11.7"
+pyproj = "^3.7.1"
+xarray = "^2025.7.1"
+zarr = "^3.1.0"
+
+[tool.poetry.group.dev.dependencies]
+coverage = "^7.9.2"
+jupyter = "^1.1.1"
+mkdocs = "^1.6.1"
+mkdocs-material = "^9.6.15"
+mkdocstrings = { extras = ["python"], version = "^0.29.1" }
+mypy = "^1.17.0"
+pre-commit = "^4.2.0"
+pytest = "^8.4.1"
+ruff = "^0.12.4"
+>>>>>>> e52db85 (feature<documentation>: Initial base documentation)
 
 [tool.poetry.group.docs.dependencies]
 zensical = "^0.0.30"
@@ -101,6 +122,7 @@ ignore = [
 "conftest.py" = ["E501"]
 
 [tool.mypy]
+<<<<<<< HEAD
 packages = ["src.meteoforge"]
 plugins = []
 python_version = "3.13"
@@ -122,6 +144,9 @@ files = ["src/meteoforge/spatial_temporal/locations.py"]
 
 [tool.pylint.format]
 max-line-length = 120
+=======
+packages = ["meteoforge"]
+>>>>>>> e52db85 (feature<documentation>: Initial base documentation)
 
 [tool.pytest.ini_options]
 addopts = [

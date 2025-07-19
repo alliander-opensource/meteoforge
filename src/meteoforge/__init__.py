@@ -1,2 +1,6 @@
+<<<<<<< HEAD
 # SPDX-FileCopyrightText: 2025-2026 Contributors to the MeteoForge project
 # SPDX-License-Identifier: MPL-2.0
+=======
+#!/usr/bin/env python
+>>>>>>> e52db85 (feature<documentation>: Initial base documentation)
