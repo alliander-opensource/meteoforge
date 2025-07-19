@@ -1,3 +1,7 @@
+[//]: # (SPDX-FileCopyrightText: 2024-2025 Copyright Contributors to the MeteoForge project)
+
+[//]: # (SPDX-License-Identifier: MPL-2.0)
+
 # WPAS Utility Tools
 
 This directory contains utility tools for the WPAS project. The tools are intended to be used to convert files between
