@@ -1,42 +1,44 @@
-[tool.poetry]
-name = "weather-provider-libraries"
-version = "0.3.1"
-description = "The Weather Provider Libraries for the Weather Provider Access Suite project"
-authors = ["Raoul Linnenbank <58594297+rflinnenbank@users.noreply.github.com>"]
-license = "MPL2.0"
-readme = "README.rst"
+[project]
+name = "meteoforge"
+version = "3.0.0-alpha.1"
+description = "The MeteoForge Project provides a set of tools to work with meteorological data, focused on downloading, processing and formatting datasets from various sources."
+authors = [
+    { name = "Raoul Linnenbank", email = "58594297+rflinnenbank@users.noreply.github.com" }
+]
+license = { text = "MPL2.0" }
+readme = "README.md"
+requires-python = ">=3.13"
+dynamic = ["dependencies"]
+
+[tool.poetry.urls]
+homepage = "https://github.com/alliander-opensource/meteoforge"
+repository = "https://github.com/alliander-opensource/meteoforge"
+documentation = "https://github.com/alliander-opensource/meteoforge"
 
 [tool.poetry.dependencies]
-python = "^3.12"
-pydantic = "^2.8.2"
-pyproj = "^3.6.1"
-numpy = "^2.0.1"
-xarray = "^2024.10.0"
-dask = "^2024.10.0"
-zarr = "^2.18.3"
+dask = "^2025.7"
 netcdf4 = "^1.7.2"
-
-[tool.poetry.group.dev]
-optional = true
+numpy = "^2.3.1"
+pydantic = "^2.11.7"
+pyproj = "^3.7.1"
+xarray = "^2025.7.1"
+zarr = "^3.1.0"
 
 [tool.poetry.group.dev.dependencies]
-sphinx = "^8.0.2"
-pytest = "^8.3.2"
-coverage = "^7.6.1"
-mypy = "^1.11.1"
-ruff = "^0.5.7"
-black = "^24.8.0"
-jupyter = "^1.0.0"
-pre-commit = "^3.8.0"
-myst-parser = "^4.0.0"
-pytest-cov = "^5.0.0"
-
+coverage = "^7.9.2"
+jupyter = "^1.1.1"
+mkdocs = "^1.6.1"
+mkdocs-material = "^9.6.15"
+mkdocstrings = { extras = ["python"], version = "^0.29.1" }
+mypy = "^1.17.0"
+pre-commit = "^4.2.0"
+pytest = "^8.4.1"
+ruff = "^0.12.4"
 
 [build-system]
 requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"
 
-# Tool configuration:
 [tool.ruff]
 output-format = "github"
 line-length = 120
@@ -73,46 +75,33 @@ exclude = [
 
 [tool.ruff.lint]
 select = [
-    # pycodestyle
     "E",
-    # Pyflake
     "F",
-    # pyupgrade
     "UP",
-    # flake8-bugbear
     "B",
-    # flake8-simplify
     "SIM",
-    # isort
     "I",
-    # pydocstyle
     "D",
 ]
 ignore = [
-    # Missing docstring in public module
     "D100",
-    # Missing docstring in public package
     "D104",
-    #  `one-blank-line-before-class` (D203) and `no-blank-line-before-class` (D211) are incompatible. Ignoring `one-blank-line-before-class`.
     "D203",
-    # `multi-line-summary-first-line` (D212) and `multi-line-summary-second-line` (D213) are incompatible. Ignoring `multi-line-summary-second-line`.
     "D213",
 ]
 
 [tool.ruff.lint.per-file-ignores]
-# Allow longer line length in conftest where many 1-line dictinaries are specified
 "conftest.py" = ["E501"]
 
 [tool.mypy]
-packages = ["vbd_alise_api"]
-exclude = ["migrations"]
+packages = ["src.meteoforge"]
 
 [tool.pytest.ini_options]
 addopts = [
-  "--cov",
-  "--cov-branch",
-  "--cov-report=xml",
-  "--cov-report=term-missing"  # Coverage report incl missing lines in terminal
+    "--cov",
+    "--cov-branch",
+    "--cov-report=xml",
+    "--cov-report=term-missing"
 ]
 minversion = "8.3.2"
 testpaths = ["tests"]
@@ -123,6 +112,3 @@ omit = [
     "tests/*",
     ".venv/*",
 ]
-
-[tool.black]
-line-length = 120
