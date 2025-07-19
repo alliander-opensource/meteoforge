@@ -13,7 +13,7 @@ def setup_logging(config_path: str | None = None):
     if config_path is None:
         config_path = os.path.join(os.path.dirname(__file__), "logging_config.yaml")
     if os.path.exists(config_path):
-        with open(config_path) as file:
+        with open(config_path, encoding="utf-8") as file:
             config = yaml.safe_load(file)
             logging.config.dictConfig(config)
     else:
