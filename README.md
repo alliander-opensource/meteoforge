@@ -12,9 +12,9 @@
 [![Bugs](https://sonarcloud.io/api/project_badges/measure?project=alliander-opensource_meteoforge&metric=bugs)](https://sonarcloud.io/summary/new_code?id=alliander-opensource_meteoforge)
 [![Coverage](https://sonarcloud.io/api/project_badges/measure?project=alliander-opensource_meteoforge&metric=coverage)](https://sonarcloud.io/summary/new_code?id=alliander-opensource_meteoforge)
 
-<p style="text-align: center;">
+<div align="center">
   <img src="/docs/images/meteoforge_logo.png" alt="MeteoForge" width="25%" />
-</p>
+</div>
 
 ## Index
 
