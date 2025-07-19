@@ -23,6 +23,7 @@ pydantic = "^2.11.7"
 pyproj = "^3.7.1"
 xarray = "^2025.7.1"
 zarr = "^3.1.0"
+colorlog = "^6.9.0"
 
 [tool.poetry.group.dev.dependencies]
 coverage = "^7.9.2"
@@ -34,6 +35,7 @@ mypy = "^1.17.0"
 pre-commit = "^4.2.0"
 pytest = "^8.4.1"
 ruff = "^0.12.4"
+types-pyyaml = "^6.0.12.20250516"
 
 [build-system]
 requires = ["poetry-core"]
