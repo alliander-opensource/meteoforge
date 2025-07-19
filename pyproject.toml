@@ -94,7 +94,7 @@ ignore = [
 "conftest.py" = ["E501"]
 
 [tool.mypy]
-packages = ["meteoforge"]
+packages = ["src.meteoforge"]
 
 [tool.pytest.ini_options]
 addopts = [
