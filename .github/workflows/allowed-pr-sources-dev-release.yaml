@@ -1,0 +1,26 @@
+name: Check if PR source branch is allowed for development or release branches
+
+on:
+  pull_request:
+    types: [ opened, reopened, synchronize, edited, ready_for_review ]
+    branches:
+      - development
+      - release/**
+
+jobs:
+  enforce:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check PR source branch
+        env:
+          HEAD_REF: ${{ github.head_ref }}
+        run: |
+          echo "Head branch: $HEAD_REF"
+          if [[ "$HEAD_REF" =~ ^feature/ || "$HEAD_REF" =~ ^dev/feature/ ]]; then
+            echo "✔ Allowed source branch."
+            exit 0
+          else
+            echo "❌ Disallowed source branch: $HEAD_REF"
+            echo "Only 'feature/*' or 'dev/feature/*' may open PRs into 'development' or 'release/*'."
+            exit 1
+          fi
