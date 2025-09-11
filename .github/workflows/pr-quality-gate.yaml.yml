@@ -1,0 +1,52 @@
+name: "PR Quality Gate: rc & main"
+
+on:
+  pull_request:
+    branches: [ rc, main ]
+    types: [ opened, synchronize, reopened, ready_for_review ]
+
+permissions:
+  contents: read
+  pull-requests: write
+
+concurrency:
+  group: pr-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  precommit:
+    name: pre-commit
+    if: ${{ !github.event.pull_request.draft }}
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      # NOTE: point "uses:" to the DIRECTORY that contains action.yaml
+      # If your composite is at ./pre-commit/action.yaml, use "./pre-commit"
+      - name: Run pre-commit composite
+        uses: ./.github/workflows/pre-commit
+        with:
+          python-version: ''
+
+  pytest:
+    name: pytest
+    if: ${{ !github.event.pull_request.draft }}
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Run pytest composite
+        uses: ./.github/workflows/pytest
+        with:
+          python-version: ''
+
+  sonarcloud:
+    name: SonarCloud
+    if: ${{ !github.event.pull_request.draft }}
+    runs-on: ubuntu-latest
+    needs: [ pytest ]        # starts only after pytest completes
+    steps:
+      - uses: actions/checkout@v4
+      - name: Run SonarCloud composite
+        uses: ./.github/workflows/sonar
+        with:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
