@@ -38,8 +38,8 @@ jobs:
         with:
           python-version: ''
 
-  sonarcloud:
-    name: SonarCloud
+  sonarqube:
+    name: SonarQube
     if: ${{ !github.event.pull_request.draft }}
     runs-on: ubuntu-latest
     needs: [ pytest ]        # starts only after pytest completes
