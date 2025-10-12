@@ -3224,6 +3224,26 @@ files = [
 ptyprocess = ">=0.5"
 
 [[package]]
+name = "pip-requirements-parser"
+version = "32.0.1"
+description = "pip requirements parser - a mostly correct pip requirements parsing library because it uses pip's own code."
+optional = false
+python-versions = ">=3.6.0"
+groups = ["dev"]
+files = [
+    { file = "pip-requirements-parser-32.0.1.tar.gz", hash = "sha256:b4fa3a7a0be38243123cf9d1f3518da10c51bdb165a2b2985566247f9155a7d3" },
+    { file = "pip_requirements_parser-32.0.1-py3-none-any.whl", hash = "sha256:4659bc2a667783e7a15d190f6fccf8b2486685b6dba4c19c3876314769c57526" },
+]
+
+[package.dependencies]
+packaging = "*"
+pyparsing = "*"
+
+[package.extras]
+docs = ["Sphinx (>=3.3.1)", "doc8 (>=0.8.1)", "sphinx-rtd-theme (>=0.5.0)"]
+testing = ["aboutcode-toolkit (>=6.0.0)", "black", "pytest (>=6,!=7.0.0)", "pytest-xdist (>=2)"]
+
+[[package]]
 name = "platformdirs"
 version = "4.9.2"
 description = "A small Python package for determining appropriate platform-specific dirs, e.g. a `user data dir`."
@@ -3523,6 +3543,21 @@ pyyaml = "*"
 
 [package.extras]
 extra = ["pygments (>=2.19.1)"]
+
+[[package]]
+name = "pyparsing"
+version = "3.2.5"
+description = "pyparsing - Classes and methods to define and execute parsing grammars"
+optional = false
+python-versions = ">=3.9"
+groups = ["dev"]
+files = [
+    { file = "pyparsing-3.2.5-py3-none-any.whl", hash = "sha256:e38a4f02064cf41fe6593d328d0512495ad1f3d8a91c4f73fc401b3079a59a5e" },
+    { file = "pyparsing-3.2.5.tar.gz", hash = "sha256:2df8d5b7b2802ef88e8d016a2eb9c7aeaa923529cd251ed0fe4608275d4105b6" },
+]
+
+[package.extras]
+diagrams = ["jinja2", "railroad-diagrams"]
 
 [[package]]
 name = "pyproj"
