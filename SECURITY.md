@@ -19,6 +19,10 @@ Please describe clearly how the issue can be reproduced, so we can fix it quickl
 the affected system and a description of the vulnerability are sufficient. We may contact you if we need more
 information about a complex vulnerability.
 
+## Other issues
+
+For non-security related issues, please use the [issue tracker](
+
 ## Thanks
 
 We don't have a bug bounty program, but we're grateful for all the reports we get. We offer an Alliander Security hoodie

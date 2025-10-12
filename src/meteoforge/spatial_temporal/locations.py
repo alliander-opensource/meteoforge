@@ -29,9 +29,9 @@ class MFLocation:
     """
 
     def __init__(self, *, x: int | float, y: int | float, epsg_code: int = 4326):
-        """Initializes the MFLocation with x, y coordinates and an optional EPSG code."""
+        """Initialize the MFLocation class."""
         # Validate the input parameters
-        if self.valid_location(x, y, epsg_code):
+        if self.validate_location(x, y, epsg_code):
             # Set the instance variables
             self.x = float(x)
             self.y = float(y)
@@ -40,14 +40,14 @@ class MFLocation:
             raise ValueError("Invalid location parameters")
 
     @staticmethod
-    def valid_location(x: float, y: float, epsg_code: int = 4326) -> bool:
-        """Validates the location parameters for type and existence."""
+    def validate_location(x: float, y: float, epsg_code: int = 4326) -> bool:
+        """Validate a given x,y location with an EPSG code as an existing coordinate."""
         logger.debug(f"Validating location: x={x}, y={y}, epgs_code={epsg_code}")
 
         # Validate the types of x, y, and epgs_code
-        if not isinstance(x, (int, float)):
+        if not isinstance(x, int | float):
             raise ValueError("x must be a number")
-        if not isinstance(y, (int, float)):
+        if not isinstance(y, int | float):
             raise ValueError("y must be a number")
         if not isinstance(epsg_code, int):
             raise ValueError("epgs_code must be an integer")
@@ -63,27 +63,44 @@ class MFLocation:
         ...
 
         logger.debug(f"Location validation passed and valid: x={x}, y={y}, epsg_code={epsg_code}")
+        return True
 
     @staticmethod
-    def valid_crs(epsg_code: int) -> bool:
-        """Validates the EPSG code for known coordinate reference systems."""
+    def validate_crs(epsg_code: int) -> bool:
+        """Validate a given EPSG code for valid and known coordinate reference systems.
+
+        A valid CRS is one that exists, is not deprecated, and is either geographic or geocentric. This helps exclude
+         CRS values that are unsuitable for representing x,y coordinates in a geographic context.
+        """
         logger.debug(f"Validating CRS with EPSG code: {epsg_code}")
 
         try:
             crs = CRS.from_epsg(epsg_code)
         except CRSError as e:
-            raise ValueError(f"invalid EPSG code '{crs}': --<<-- {e} -->>--") from e
+            raise ValueError(f"invalid EPSG code '{epsg_code}': --<<-- {e} -->>--") from e
 
-            # Check that the CRS is not deprecated
+        # Check that the CRS is not deprecated
         if crs.is_deprecated:
             raise ValueError(
                 f"The CRS with EPSG code {epsg_code} is deprecated. Please use a different (non-deprecated) CRS."
             )
 
-            # Check that the CRS is for an x,y based geographic coordinate system
+        # Check that the CRS is for an x,y based geographic coordinate system
         if not crs.is_geographic and not crs.is_geocentric:
             raise ValueError(
                 "The MFLocation class type only supports Geographic (CRS.is_geographic=True) and Geocentric Coordinate "
                 "Systems (CRS.is_geocentric=True)."
             )
         return True
+
+
+class MFLocationList:
+    """A list of MFLocation objects representing multiple geographic locations."""
+
+    ...
+
+
+class MFLocationVector:
+    """A vector of MFLocation objects representing a sequence of geographic locations."""
+
+    ...
