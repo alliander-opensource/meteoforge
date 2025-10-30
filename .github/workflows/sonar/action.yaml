@@ -1,0 +1,28 @@
+name: SonarCloud Scan
+description: Runs SonarCloud scan with coverage artifact
+
+inputs:
+  GITHUB_TOKEN:
+    required: true
+    description: GitHub token
+  SONAR_TOKEN:
+    required: true
+    description: SonarCloud token
+
+runs:
+  using: "composite"
+  steps:
+    - uses: actions/checkout@v4
+      with:
+        fetch-depth: 0
+
+    - uses: actions/download-artifact@v5
+      with:
+        name: coverage.xml
+        path: ./
+
+    - name: SonarCloud Scan
+      uses: SonarSource/sonarcloud-github-action@master
+      env:
+        GITHUB_TOKEN: ${{ inputs.GITHUB_TOKEN }}
+        SONAR_TOKEN: ${{ inputs.SONAR_TOKEN }}
