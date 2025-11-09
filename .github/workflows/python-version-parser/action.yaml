@@ -1,0 +1,25 @@
+name: "Parse requires-python"
+description: "Extract requires-python from pyproject.toml and parse it into a list"
+runs:
+  using: "composite"
+  steps:
+    - name: Read requires-python from pyproject.toml
+      id: read-python
+      shell: bash
+      run: |
+        set -euo pipefail
+
+        # Extract the requires-python line
+        raw_line=$(grep -E '^requires-python\s*=' pyproject.toml | head -n1 | cut -d= -f2- | xargs)
+        # Strip quotes
+        raw_value=$(echo "$raw_line" | sed 's/"//g' | sed "s/'//g")
+
+        echo "Found requires-python: $raw_value"
+
+        # Replace '||' with ',' and strip spaces
+        parsed=$(echo "$raw_value" | tr '|' ',' | tr -d ' ')
+
+        echo "Parsed versions: $parsed"
+
+        # Export as step output
+        echo "requires_python=$parsed" >> "$GITHUB_OUTPUT"
