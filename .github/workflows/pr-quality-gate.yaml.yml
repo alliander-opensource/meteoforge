@@ -25,18 +25,36 @@ jobs:
       - name: Run pre-commit composite
         uses: ./.github/workflows/pre-commit
         with:
-          python-version: ''
+          python-version: ${{ env.MAIN_PYTHON_VERSION }}
 
   pytest:
     name: pytest
     if: ${{ !github.event.pull_request.draft }}
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: ${{ fromJSON(env.SUPPORTED_PYTHON_VERSIONS) }}
     steps:
       - uses: actions/checkout@v4
       - name: Run pytest composite
         uses: ./.github/workflows/pytest
         with:
-          python-version: ''
+          python-version: ${{ matrix.python-version }}
+
+  pytest-windows:
+    name: pytest (Windows, non-blocking)
+    if: ${{ !github.event.pull_request.draft }}
+    runs-on: windows-latest
+    continue-on-error: true
+    strategy:
+      matrix:
+        python-version: ${{ fromJSON(env.SUPPORTED_PYTHON_VERSIONS) }}
+    steps:
+      - uses: actions/checkout@v4
+      - name: Run pytest composite
+        uses: ./.github/workflows/pytest
+        with:
+          python-version: ${{ matrix.python-version }}
 
   sonarqube:
     name: SonarQube
