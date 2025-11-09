@@ -19,7 +19,7 @@ jobs:
     if: ${{ !github.event.pull_request.draft }}
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
       # NOTE: point "uses:" to the DIRECTORY that contains action.yaml
       # If your composite is at ./pre-commit/action.yaml, use "./pre-commit"
       - name: Run pre-commit composite
@@ -35,7 +35,7 @@ jobs:
       matrix:
         python-version: ${{ fromJSON(env.SUPPORTED_PYTHON_VERSIONS) }}
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
       - name: Run pytest composite
         uses: ./.github/workflows/pytest
         with:
@@ -50,7 +50,7 @@ jobs:
       matrix:
         python-version: ${{ fromJSON(env.SUPPORTED_PYTHON_VERSIONS) }}
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
       - name: Run pytest composite
         uses: ./.github/workflows/pytest
         with:
@@ -62,7 +62,7 @@ jobs:
     runs-on: ubuntu-latest
     needs: [ pytest ]        # starts only after pytest completes
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
       - name: Run SonarCloud composite
         uses: ./.github/workflows/sonar
         with:
