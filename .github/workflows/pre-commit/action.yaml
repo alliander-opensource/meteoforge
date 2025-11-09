@@ -1,0 +1,36 @@
+name: Pre-commit
+description: Sets up Python and Poetry and runs pre-commit
+
+inputs:
+  python-version:
+    required: true
+    description: Python version used
+
+runs:
+  using: "composite"
+  steps:
+    - name: Checkout repository
+      uses: actions/checkout@v3
+
+    - name: Setup Python
+      if: ${{ hashFiles('.pre-commit-config.yaml') != '' }}
+      uses: actions/setup-python@v3
+      with:
+        python-version: ${{ inputs.python-version }}
+
+    - name: Install Poetry
+      if: ${{ hashFiles('.pre-commit-config.yaml') != '' }}
+      run: pipx install --python python${{ inputs.python-version }} poetry
+      shell: bash
+
+    - name: Install pre-commit
+      if: ${{ hashFiles('.pre-commit-config.yaml') != '' }}
+      run: |
+        pip install pre-commit
+        pre-commit install
+      shell: bash
+
+    - name: Run pre-commit
+      if: ${{ hashFiles('.pre-commit-config.yaml') != '' }}
+      run: pre-commit run -a
+      shell: bash
