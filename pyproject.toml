@@ -7,7 +7,7 @@ authors = [
 ]
 license = { text = "MPL2.0" }
 readme = "README.md"
-requires-python = ">=3.13,<3.14.0"
+requires-python = ">=3.13,<3.15.0"
 dynamic = ["dependencies"]
 
 [tool.poetry.urls]
@@ -16,8 +16,8 @@ repository = "https://github.com/alliander-opensource/meteoforge"
 documentation = "https://github.com/alliander-opensource/meteoforge"
 
 [tool.poetry.dependencies]
-pydantic = "^2.11.7"
-colorlog = "^6.9.0"
+pydantic = "^2.12.3"
+colorlog = "^6.10.1"
 
 [tool.poetry.group.dev.dependencies]
 mkdocs = "^1.6.1"
