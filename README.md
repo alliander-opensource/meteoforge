@@ -1,5 +1,4 @@
 [//]: # (SPDX-FileCopyrightText: 2024-2025 Copyright Contributors to the MeteoForge project)
-
 [//]: # (SPDX-License-Identifier: MPL-2.0)
 
 # MeteoForge - Core System
@@ -12,9 +11,7 @@
 [![Bugs](https://sonarcloud.io/api/project_badges/measure?project=alliander-opensource_meteoforge&metric=bugs)](https://sonarcloud.io/summary/new_code?id=alliander-opensource_meteoforge)
 [![Coverage](https://sonarcloud.io/api/project_badges/measure?project=alliander-opensource_meteoforge&metric=coverage)](https://sonarcloud.io/summary/new_code?id=alliander-opensource_meteoforge)
 
-<div align="center">
-  <img src="/docs/images/meteoforge_logo.png" alt="MeteoForge" width="25%" />
-</div>
+![MeteoForge logo](/docs/images/meteoforge_logo.png)
 
 ## Index
 

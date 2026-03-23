@@ -1,106 +1,202 @@
-#  SPDX-FileCopyrightText: 2024-2025 Copyright Contributors to the MeteoForge project
-#  SPDX-License-Identifier: MPL-2.0
-from pyproj import CRS
-from pyproj.exceptions import CRSError
+# SPDX-FileCopyrightText: 2025-2026 Contributors to the MeteoForge project
+# SPDX-License-Identifier: MPL-2.0
 
-from src.meteoforge.logging.logging import logger
+"""Hybrid location module: easy use, CRS-flexible, fuzzy equality, and robust containment."""
+
+from collections.abc import Iterable
+from typing import Any
+
+from pyproj import CRS, Transformer
+from shapely.geometry import Point, Polygon
+
+from meteoforge.spatial_temporal.validators import validate_mf_location
+
+
+def _crs_to_obj(crs_like: int | str | CRS) -> CRS:
+    """Convert an int, str, or CRS to a CRS object."""
+    if isinstance(crs_like, CRS):
+        return crs_like
+    return CRS.from_user_input(value=crs_like)
+
+
+def _transform_point(x: float, y: float, from_crs: CRS, to_crs: CRS) -> tuple[float, float]:
+    """Transform a point (x, y) from one CRS to another."""
+    if from_crs == to_crs:
+        return x, y
+    transformer = Transformer.from_crs(from_crs, to_crs, always_xy=True)
+    x2, y2 = transformer.transform(x, y)
+    return float(x2), float(y2)
 
 
 class MFLocation:
-    """The base class for representing geographic locations in MeteoForge.
+    """A geographic location with CRS, supporting transformation and fuzzy equality."""
 
-    This class serves as a base for various location based  formats, such as coordinates, bounding boxes, and polygons.
-    It provides a common interface for working with these different formats, allowing for the easy conversion and
-    manipulation of geographic data.
+    def __init__(self, x: float, y: float, crs: int | str | CRS = 4326):
+        """Create a location with coordinates (x, y) and a CRS."""
+        self.crs = _crs_to_obj(crs)
+        self.x = float(x)
+        self.y = float(y)
+        self.point = Point(self.x, self.y)
+        validate_mf_location(self.x, self.y, self.crs)
 
-    Attributes
-    ----------
-        x (float):
-            The x-coordinate of the location. Typically, this represents longitude, but this can vary based on the
-            Coordinate Reference System (CRS) used.
-        y (float):
-            The y-coordinate of the location. Typically, this represents latitude, but this can vary based on the
-            Coordinate Reference System (CRS) used.
-        crs (int):
-            The coordinate reference system of the location, if applicable via EPSG numerical code. This is used to
-            properly interpret the x and y coordinates in a geographic context. The default setting is EPSG code 4326,
-            which represents the WGS 84 geographic coordinate system.
+    def to(self, target_crs: int | str | CRS) -> "MFLocation":
+        """Return a new MFLocation transformed to the target CRS."""
+        target_crs_obj = _crs_to_obj(target_crs)
+        x2, y2 = _transform_point(self.x, self.y, self.crs, target_crs_obj)
+        return MFLocation(x2, y2, target_crs_obj)
 
-    """
+    def equals(self, other: "MFLocation", tol: float = 1e-6, crs: int | str | CRS = 4326) -> bool:
+        """Check if two locations are close enough in a common CRS."""
+        # Compare in a common CRS (default: WGS84)
+        crs_obj = _crs_to_obj(crs)
+        a = self.to(crs_obj)
+        b = other.to(crs_obj)
+        return abs(a.x - b.x) < tol and abs(a.y - b.y) < tol
 
-    def __init__(self, *, x: int | float, y: int | float, epsg_code: int = 4326):
-        """Initialize the MFLocation class."""
-        # Validate the input parameters
-        if self.validate_location(x, y, epsg_code):
-            # Set the instance variables
-            self.x = float(x)
-            self.y = float(y)
-            self.crs = epsg_code
-        else:
-            raise ValueError("Invalid location parameters")
+    def __eq__(self, other: Any) -> bool:
+        """Check equality with another MFLocation, using fuzzy equality in a common CRS."""
+        if not isinstance(other, MFLocation):
+            return NotImplemented
+        return self.equals(other)
 
-    @staticmethod
-    def validate_location(x: float, y: float, epsg_code: int = 4326) -> bool:
-        """Validate a given x,y location with an EPSG code as an existing coordinate."""
-        logger.debug(f"Validating location: x={x}, y={y}, epgs_code={epsg_code}")
-
-        # Validate the types of x, y, and epgs_code
-        if not isinstance(x, int | float):
-            raise ValueError("x must be a number")
-        if not isinstance(y, int | float):
-            raise ValueError("y must be a number")
-        if not isinstance(epsg_code, int):
-            raise ValueError("epgs_code must be an integer")
-
-        logger.debug(f"Type validation passed: x={type(x)}, y={type(y)}, epgs_code={type(epsg_code)}")
-
-        # Validate the CRS type suggested by the EPSG code
-        MFLocation.valid_crs(epsg_code)
-
-        logger.debug(f"CRS validation passed for EPSG code: {epsg_code}")
-
-        # Check that x and y are within valid ranges for geographic coordinates on the given CRS
-        ...
-
-        logger.debug(f"Location validation passed and valid: x={x}, y={y}, epsg_code={epsg_code}")
-        return True
-
-    @staticmethod
-    def validate_crs(epsg_code: int) -> bool:
-        """Validate a given EPSG code for valid and known coordinate reference systems.
-
-        A valid CRS is one that exists, is not deprecated, and is either geographic or geocentric. This helps exclude
-         CRS values that are unsuitable for representing x,y coordinates in a geographic context.
-        """
-        logger.debug(f"Validating CRS with EPSG code: {epsg_code}")
-
-        try:
-            crs = CRS.from_epsg(epsg_code)
-        except CRSError as e:
-            raise ValueError(f"invalid EPSG code '{epsg_code}': --<<-- {e} -->>--") from e
-
-        # Check that the CRS is not deprecated
-        if crs.is_deprecated:
-            raise ValueError(
-                f"The CRS with EPSG code {epsg_code} is deprecated. Please use a different (non-deprecated) CRS."
-            )
-
-        # Check that the CRS is for an x,y based geographic coordinate system
-        if not crs.is_geographic and not crs.is_geocentric:
-            raise ValueError(
-                "The MFLocation class type only supports Geographic (CRS.is_geographic=True) and Geocentric Coordinate "
-                "Systems (CRS.is_geocentric=True)."
-            )
-        return True
+    def __repr__(self) -> str:
+        """Get a string representation of the location."""
+        return f"MFLocation(x={self.x}, y={self.y}, crs={self.crs.to_string()})"
 
 
 class MFLocationList:
-    """A list of MFLocation objects representing multiple geographic locations."""
+    """A class representing a list of MFLocation objects, with fuzzy containment and CRS handling."""
 
-    ...
+    def __init__(self, locations: Iterable[MFLocation] | None = None, crs: int | str | CRS = 4326):
+        """Create a list of locations, converting all to the given CRS."""
+        self.crs = _crs_to_obj(crs)
+        self.locations: list[MFLocation] = []
+        if locations:
+            for loc in locations:
+                self.append(loc)
+
+    def append(self, location: Any) -> None:
+        """Add a location to the list, converting to the list's CRS if needed."""
+        if not isinstance(location, MFLocation):
+            raise TypeError("Only MFLocation instances can be added.")
+        # Accept any CRS, but store as self.crs
+        loc_in_crs = location.to(self.crs)
+        self.locations.append(loc_in_crs)
+
+    def __getitem__(self, idx: int) -> MFLocation:
+        """Get a location by index."""
+        return self.locations[idx]
+
+    def __setitem__(self, idx: int, value: MFLocation) -> None:
+        """Set a location by index, converting to the list's CRS if needed."""
+        self.locations[idx] = value.to(self.crs)
+
+    def __delitem__(self, idx: int) -> None:
+        """Delete a location by index."""
+        del self.locations[idx]
+
+    def __len__(self) -> int:
+        """Return the number of locations in the list."""
+        return len(self.locations)
+
+    def __contains__(self, item: MFLocation) -> bool:
+        """Check if a location is 'fuzzily' in the list, CRS-aware."""
+        # Fuzzy containment: is any location in the list 'close enough' to item?
+        return any(loc.equals(item) for loc in self.locations)
+
+    def find_nearby(self, item: MFLocation, tol: float = 1e-6) -> MFLocation | None:
+        """Return the first location in the list close to the given item, or None."""
+        for loc in self.locations:
+            if loc.equals(item, tol=tol):
+                return loc
+        return None
+
+    def __repr__(self) -> str:
+        """Return a string representation of the MFLocationList instance."""
+        return f"MFLocationList({self.locations}, crs={self.crs.to_string()})"
 
 
 class MFLocationVector:
-    """A vector of MFLocation objects representing a sequence of geographic locations."""
+    """A vector (polygon) of MFLocation objects, with fuzzy containment and CRS handling."""
 
-    ...
+    def __init__(self, locations: Iterable[MFLocation] | None = None, crs: int | str | CRS = 4326):
+        """Create a vector (polygon) from locations, converting all to the given CRS."""
+        self.crs = _crs_to_obj(crs)
+        self.locations: list[MFLocation] = []
+        self.polygon: Polygon | None = None
+        if locations:
+            for loc in locations:
+                self.append(loc)
+        self._update_polygon()
+
+    def append(self, location: Any) -> None:
+        """Add a location to the vector, converting to the vector's CRS if needed."""
+        if not isinstance(location, MFLocation):
+            raise TypeError("Only MFLocation instances can be added.")
+        loc_in_crs = location.to(self.crs)
+        self.locations.append(loc_in_crs)
+        self._update_polygon()
+
+    def _update_polygon(self) -> None:
+        """Update the internal Shapely polygon from the current locations."""
+        coords = [loc.to(self.crs).point for loc in self.locations]
+        # Only create a polygon if there are at least 3 unique points (4 for closure)
+        if len(coords) >= 3:
+            xy = [(pt.x, pt.y) for pt in coords]
+            # Ensure closure: first == last
+            if xy[0] != xy[-1]:
+                xy.append(xy[0])
+            if len(xy) >= 4:
+                self.polygon = Polygon(xy)
+            else:
+                self.polygon = None
+        else:
+            self.polygon = None
+
+    def contains(self, location: MFLocation, tol: float = 1e-6) -> bool:
+        """Check if the vector contains a location (fuzzy, CRS-aware, and near boundary)."""
+        pt = location.to(self.crs).point
+        # 1. True Shapely containment
+        if self.polygon and self.polygon.contains(pt):
+            return True
+        # 2. Fuzzy: check if any vertex is close to the point
+        if any(pt.distance(vertex.point) < tol for vertex in self.locations):
+            return True
+        # 3. Fuzzy: check if point is near the polygon boundary (within tol)
+        return bool(self.polygon and self.polygon.boundary.distance(pt) < tol)
+
+    def __contains__(self, item: MFLocation) -> bool:
+        """Check if a location is in the vector, using fuzzy containment."""
+        return self.contains(item)
+
+    def __getitem__(self, idx: int) -> MFLocation:
+        """Get a location by index."""
+        return self.locations[idx]
+
+    def __setitem__(self, idx: int, value: MFLocation) -> None:
+        """Set a location by index, converting to the vector's CRS if needed."""
+        self.locations[idx] = value.to(self.crs)
+        self._update_polygon()
+
+    def __delitem__(self, idx: int) -> None:
+        """Delete a location by index."""
+        del self.locations[idx]
+        self._update_polygon()
+
+    def __len__(self) -> int:
+        """Return the number of locations in the vector."""
+        return len(self.locations)
+
+    def __repr__(self) -> str:
+        """Return a string representation of the MFLocationVector instance."""
+        return f"MFLocationVector({self.locations}, crs={self.crs.to_string()})"
+
+
+# Utility: fuzzy membership for a location in a list/vector
+
+
+def fuzzy_in(item: MFLocation, container: Iterable[MFLocation], tol: float = 1e-6, crs: int | str | CRS = 4326) -> bool:
+    """Check if a location is 'fuzzily' in a container (list/vector), CRS-aware."""
+    crs_obj = _crs_to_obj(crs)
+    item_in_crs = item.to(crs_obj)
+    return any(loc.to(crs_obj).equals(item_in_crs, tol=tol, crs=crs_obj) for loc in container)
