@@ -1,5 +1,5 @@
-#  SPDX-FileCopyrightText: 2024-2025 Copyright Contributors to the MeteoForge project
-#  SPDX-License-Identifier: MPL-2.0
+# SPDX-FileCopyrightText: 2025-2026 Contributors to the MeteoForge project
+# SPDX-License-Identifier: MPL-2.0
 
 import logging
 import logging.config
@@ -8,7 +8,7 @@ import os
 import yaml
 
 
-def setup_logging(config_path: str | None = None):
+def setup_logging(config_path: str | None = None) -> None:
     """Set up project logging using the 'logging_config.yaml' config file."""
     if config_path is None:
         config_path = os.path.join(os.path.dirname(__file__), "logging_config.yaml")
