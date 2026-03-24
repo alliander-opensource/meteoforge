@@ -14,13 +14,13 @@ from meteoforge.spatial_temporal.locations import (
     MFLocation,
     MFLocationList,
     MFLocationVector,
-    _crs_to_obj,  # type: ignore
-    _transform_point,  # type: ignore
+    _crs_to_obj,
+    _transform_point,
     fuzzy_in,
 )
 
 
-def test_crs_to_obj_accepts_crs_types():
+def test_crs_to_obj_accepts_crs_types() -> None:
     """Test that _crs_to_obj correctly accepts CRS objects, ints, and strings."""
     # Accepts CRS, int, str
     crs = CRS.from_epsg(4326)
@@ -29,14 +29,14 @@ def test_crs_to_obj_accepts_crs_types():
     assert _crs_to_obj("EPSG:4326") == CRS.from_epsg(4326)
 
 
-def test_transform_point_identity():
+def test_transform_point_identity() -> None:
     """Transforming a point in the same CRS should return the same coordinates."""
     crs = CRS.from_epsg(4326)
     x, y = 1.0, 2.0
     assert _transform_point(x, y, crs, crs) == (x, y)
 
 
-def test_mflocation_repr_and_eq():
+def test_mflocation_repr_and_eq() -> None:
     """Test MFLocation equality and string representation."""
     a = MFLocation(1, 2, 4326)
     b = MFLocation(1, 2, 4326)
@@ -46,7 +46,7 @@ def test_mflocation_repr_and_eq():
     assert "MFLocation" in repr(a)
 
 
-def test_mflocation_to_transforms(monkeypatch: Any):
+def test_mflocation_to_transforms(monkeypatch: Any) -> None:
     """Test that MFLocation.to correctly transforms coordinates using _transform_point."""
     # Only patch to check that _transform_point is called, not to replace its math
     called = {}
@@ -63,7 +63,7 @@ def test_mflocation_to_transforms(monkeypatch: Any):
     assert b.x == 123 and b.y == 456
 
 
-def test_mflocationlist_append_and_contains():
+def test_mflocationlist_append_and_contains() -> None:
     """Test MFLocationList append, contains, get, set, and delete operations."""
     a = MFLocation(1, 2, 4326)
     b = MFLocation(3, 4, 4326)
@@ -81,7 +81,7 @@ def test_mflocationlist_append_and_contains():
     assert len(lst) == 1
 
 
-def test_mflocationlist_find_nearby():
+def test_mflocationlist_find_nearby() -> None:
     """Test MFLocationList.find_nearby method."""
     a = MFLocation(1, 2, 4326)
     b = MFLocation(1.0000001, 2, 4326)
@@ -92,7 +92,7 @@ def test_mflocationlist_find_nearby():
     assert not_found is None
 
 
-def test_mflocationvector_append_and_contains():
+def test_mflocationvector_append_and_contains() -> None:
     """Test MFLocationVector with a valid closed polygon, no mutation after creation."""
     a = MFLocation(0, 0, 4326)
     b = MFLocation(1, 0, 4326)
@@ -110,7 +110,7 @@ def test_mflocationvector_append_and_contains():
     assert len(vec.locations) == 4
 
 
-def test_fuzzy_in():
+def test_fuzzy_in() -> None:
     """Test the fuzzy_in function for real MFLocation objects."""
     items = [MFLocation(1, 2, 4326), MFLocation(3, 4, 4326), MFLocation(5, 6, 4326)]
     item = MFLocation(3.0000001, 4, 4326)
