@@ -72,7 +72,7 @@ parameters. Unit conversion is handled with [Pint](https://pint.readthedocs.io/)
 > _speed" in m/s._
 > _The Core System can convert Beaufort to m/s using its registry of standard parameters and Pint-based conversions._
 
-## How to install
+## How to install MeteoForge
 
 You can install the MeteoForge Core System via pip or poetry.
 
