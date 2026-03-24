@@ -5,9 +5,6 @@ on:
     branches: [ rc, main ]
     types: [ opened, synchronize, reopened, ready_for_review ]
 
-permissions:
-  contents: read
-  pull-requests: write
 
 concurrency:
   group: pr-${{ github.event.pull_request.number || github.ref }}
@@ -15,6 +12,9 @@ concurrency:
 
 jobs:
   precommit:
+    permissions:
+      contents: read
+      pull-requests: write
     name: pre-commit
     if: ${{ !github.event.pull_request.draft }}
     runs-on: ubuntu-latest
@@ -28,6 +28,9 @@ jobs:
           python-version: ${{ env.MAIN_PYTHON_VERSION }}
 
   pytest:
+    permissions:
+      contents: read
+      pull-requests: write
     name: pytest
     if: ${{ !github.event.pull_request.draft }}
     runs-on: ubuntu-latest
@@ -42,6 +45,9 @@ jobs:
           python-version: ${{ matrix.python-version }}
 
   pytest-windows:
+    permissions:
+      contents: read
+      pull-requests: write
     name: pytest (Windows, non-blocking)
     if: ${{ !github.event.pull_request.draft }}
     runs-on: windows-latest
@@ -57,6 +63,9 @@ jobs:
           python-version: ${{ matrix.python-version }}
 
   sonarqube:
+    permissions:
+      contents: read
+      pull-requests: write
     name: SonarQube
     if: ${{ !github.event.pull_request.draft }}
     runs-on: ubuntu-latest

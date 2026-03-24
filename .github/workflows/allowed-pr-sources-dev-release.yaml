@@ -1,7 +1,5 @@
 name: Check if PR source branch is allowed for development or release branches
 
-permissions:
-  contents: read
 
 on:
   pull_request:
@@ -12,6 +10,8 @@ on:
 
 jobs:
   enforce:
+    permissions:
+      contents: read
     runs-on: ubuntu-latest
     steps:
       - name: Check PR source branch
