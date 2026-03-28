@@ -18,9 +18,20 @@ runs:
       with:
         python-version: ${{ inputs.python-version }}
 
+
+    - name: Validate Python version
+      if: ${{ hashFiles('.pre-commit-config.yaml') != '' }}
+      run: |
+        ALLOWED_VERSIONS="3.9 3.10 3.11"
+        if ! echo "$ALLOWED_VERSIONS" | grep -wq "${{ inputs.python-version }}"; then
+          echo "Error: python-version ${{ inputs.python-version }} is not allowed. Allowed: $ALLOWED_VERSIONS"
+          exit 1
+        fi
+      shell: bash
+
     - name: Install Poetry
       if: ${{ hashFiles('.pre-commit-config.yaml') != '' }}
-      run: pipx install --python python${{ inputs.python-version }} poetry
+      run: pipx install --python "python${{ inputs.python-version }}" poetry
       shell: bash
 
     - name: Install pre-commit
