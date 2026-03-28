@@ -1,0 +1,28 @@
+name: 'PyTest'
+description: 'Run pytest with Poetry'
+inputs:
+  python-version:
+    required: true
+    description: 'Python version used.'
+
+runs:
+  using: 'composite'
+  steps:
+    - name: Checkout repository
+      uses: actions/checkout@v3
+    - name: Set up Python
+      uses: actions/setup-python@v3
+      with:
+        python-version: ${{ inputs.python-version }}
+    - name: Install Poetry
+      run: pipx install poetry
+    - name: Install dependencies
+      run: poetry install --with dev
+    - name: Run tests
+      run: poetry run pytest -m "not unstable and not online"
+    - name: Upload coverage.xml as artifact
+      uses: actions/upload-artifact@v3
+      if: ${{ hashFiles('coverage.xml') != '' }}
+      with:
+        name: coverage.xml
+        path: ./coverage.xml
