@@ -1,0 +1,7 @@
+default: true
+line-length:
+  line_length: 120
+MD013: false  # Disable line length
+MD033:
+  allowed_elements: [ img, p ]
+MD041: false  # Disable first line heading
