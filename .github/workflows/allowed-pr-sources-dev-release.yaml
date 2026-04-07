@@ -9,6 +9,8 @@ on:
 
 jobs:
   enforce:
+    permissions:
+      contents: read
     runs-on: ubuntu-latest
     steps:
       - name: Check PR source branch
