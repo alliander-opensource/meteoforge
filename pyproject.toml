@@ -34,12 +34,13 @@ ruff = "^0.15.1"
 mypy = "^1.19.1"
 fawltydeps = "^0.20.0"
 types-pyyaml = "^6.0.12.20250915"
-mkdocs = "^1.6.1"
-mkdocs-material = "^9.7.1"
-mkdocstrings = "^1.0.3"
 pytest-cov = "^7.0.0"
 reuse = "^6.2.0"
 types-shapely = "^2.1.0.20250917"
+
+
+[tool.poetry.group.docs.dependencies]
+zensical = "^0.0.30"
 
 [build-system]
 requires = ["poetry-core"]
