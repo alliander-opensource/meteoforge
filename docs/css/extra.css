@@ -1,0 +1,33 @@
+
+
+/* Light theme: Brighter top bar and darker selection */
+@media (prefers-color-scheme: light) {
+	.md-header, .md-header__inner {
+		background-color: #2196f3 !important; /* Brighter blue */
+	}
+	.md-nav__item--active > .md-nav__link, .md-tabs__item--active {
+		background-color: #1976d2 !important; /* Darker blue for selection */
+		color: #fff !important;
+	}
+}
+
+/* Fallback for non-prefers-color-scheme browsers (default to light theme) */
+.md-header, .md-header__inner {
+		background-color: #2196f3 !important;
+}
+.md-nav__item--active > .md-nav__link, .md-tabs__item--active {
+		background-color: #1976d2 !important;
+		color: #fff !important;
+}
+
+/* Header font: bold and modern */
+.md-header__title, .md-logo {
+	font-family: 'Montserrat', 'Segoe UI', 'Arial', sans-serif !important;
+	font-weight: 700;
+	letter-spacing: 0.02em;
+}
+
+/* Optional: Add a subtle shadow to the top bar for depth */
+.md-header {
+	box-shadow: 0 4px 16px rgba(21, 101, 192, 0.25);
+}
