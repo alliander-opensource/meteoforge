@@ -1,6 +1,5 @@
 name: Check if PR source branch is allowed for development or release branches
 
-
 on:
   pull_request:
     types: [ opened, reopened, synchronize, edited, ready_for_review ]
