@@ -7,7 +7,7 @@ authors = [
 ]
 license = { text = "MPL2.0" }
 readme = "README.md"
-requires-python = ">=3.13,<3.15.0"
+requires-python = ">=3.13"
 dynamic = ["dependencies"]
 
 [tool.poetry.urls]
@@ -33,7 +33,7 @@ pre-commit = "^4.5.1"
 ruff = "^0.15.9"
 mypy = "^1.20.0"
 fawltydeps = "^0.20.0"
-types-pyyaml = "^6.0.12"
+types-pyyaml = "^6.0.12.20250915"
 pytest-cov = "^7.1.0"
 reuse = "^6.2.0"
 types-shapely = "^2.1.0.20260402"
