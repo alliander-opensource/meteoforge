@@ -7,7 +7,7 @@ authors = [
 ]
 license = { text = "MPL2.0" }
 readme = "README.md"
-requires-python = ">=3.13"
+requires-python = ">=3.13,<3.14"  # 3.14 not supported yet by all dependencies (Atheris, PyProj)
 dynamic = ["dependencies"]
 
 [tool.poetry.urls]
@@ -37,6 +37,7 @@ types-pyyaml = "^6.0.12"
 pytest-cov = "^7.1.0"
 reuse = "^6.2.0"
 types-shapely = "^2.1.0.20260402"
+atheris = "^3.0.0"
 
 
 [tool.poetry.group.docs.dependencies]

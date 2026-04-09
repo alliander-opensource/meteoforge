@@ -9,19 +9,22 @@ runs:
   using: 'composite'
   steps:
     - name: Checkout repository
-      uses: actions/checkout@v3
+      uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4.3.1
     - name: Set up Python
-      uses: actions/setup-python@v3
+      uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065 # v5.6.0
       with:
         python-version: ${{ inputs.python-version }}
     - name: Install Poetry
+      shell: bash
       run: pipx install poetry
     - name: Install dependencies
+      shell: bash
       run: poetry install --with dev
     - name: Run tests
+      shell: bash
       run: poetry run pytest -m "not unstable and not online"
     - name: Upload coverage.xml as artifact
-      uses: actions/upload-artifact@v3
+      uses: actions/upload-artifact@c6a366c94c3e0affe28c06c8df20a878f24da3cf # v3.2.2
       if: ${{ hashFiles('coverage.xml') != '' }}
       with:
         name: coverage.xml
