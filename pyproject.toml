@@ -28,7 +28,7 @@ shapely = "^2.1.2"
 
 [tool.poetry.group.dev.dependencies]
 coverage = "^7.13.5"
-pytest = "^9.0.2"
+pytest = "^9.0.3"
 pre-commit = "^4.5.1"
 ruff = "^0.15.9"
 mypy = "^1.20.0"
