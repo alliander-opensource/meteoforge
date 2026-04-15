@@ -1,5 +1,7 @@
-[//]: # (SPDX-FileCopyrightText: 2024-2025 Copyright Contributors to the MeteoForge project)
-[//]: # (SPDX-License-Identifier: MPL-2.0)
+<!--
+  SPDX-FileCopyrightText: 2025-2026 Contributors to the MeteoForge project
+  SPDX-License-Identifier: MPL-2.0
+-->
 
 # MeteoForge Tools
 

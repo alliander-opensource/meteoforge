@@ -2,6 +2,11 @@
 icon: lucide/cloud-sun-rain
 ---
 
+<!--
+  SPDX-FileCopyrightText: 2025-2026 Contributors to the MeteoForge project
+  SPDX-License-Identifier: MPL-2.0
+-->
+
 ![MeteoForge](images/meteoforge_logo.png){style="display: block; margin: 0 auto; width: 50%;"}
 
 # On the MeteoForge project
@@ -32,5 +37,4 @@ The MeteoForge project consists of three main supported components:
 - For more detailed documentation on the MeteoForge API component, go here: ...
 - For more detailed documentation on the MeteoForge Sources component, go here: ...
 
-If you want to know more 
-
+If you want to know more

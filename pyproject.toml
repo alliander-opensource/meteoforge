@@ -1,3 +1,6 @@
+# SPDX-FileCopyrightText: 2025-2026 Contributors to the MeteoForge project
+# SPDX-License-Identifier: MPL-2.0
+
 [project]
 name = "meteoforge"
 version = "3.0.0-alpha.1"
@@ -7,7 +10,7 @@ authors = [
 ]
 license = { text = "MPL2.0" }
 readme = "README.md"
-requires-python = ">=3.13"
+requires-python = ">=3.13,<3.14"  # 3.14 not supported yet by all dependencies (Atheris, PyProj)
 dynamic = ["dependencies"]
 
 [tool.poetry.urls]
@@ -19,7 +22,7 @@ documentation = "https://github.com/alliander-opensource/meteoforge"
 pyproj = "^3.7.2"
 colorlog = "^6.10.1"
 pydantic = "^2.12.5"
-xarray = "^2026.2.0"
+xarray = "^2026.4.0"
 zarr = "^3.1.6"
 numpy = "^2.4.4"
 netcdf4 = "^1.7.4"
@@ -28,19 +31,20 @@ shapely = "^2.1.2"
 
 [tool.poetry.group.dev.dependencies]
 coverage = "^7.13.5"
-pytest = "^9.0.2"
+pytest = "^9.0.3"
 pre-commit = "^4.5.1"
-ruff = "^0.15.9"
-mypy = "^1.20.0"
+ruff = "^0.15.10"
+mypy = "^1.20.1"
 fawltydeps = "^0.20.0"
 types-pyyaml = "^6.0.12"
 pytest-cov = "^7.1.0"
 reuse = "^6.2.0"
-types-shapely = "^2.1.0.20260402"
+types-shapely = "^2.1.0"
+atheris = "^3.0.0"
 
 
 [tool.poetry.group.docs.dependencies]
-zensical = "^0.0.32"
+zensical = "^0.0.33"
 
 [build-system]
 requires = ["poetry-core"]
