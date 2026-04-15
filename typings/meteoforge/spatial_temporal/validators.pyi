@@ -1,6 +1,11 @@
-from meteoforge.logging.logging import logger as logger
-from pyproj import CRS
+# SPDX-FileCopyrightText: 2025-2026 Contributors to the MeteoForge project
+# SPDX-License-Identifier: MPL-2.0
+
 from typing import Any
+
+from pyproj import CRS
+
+from meteoforge.logging.logging import logger as logger
 
 class CRSValidationError(ValueError): ...
 

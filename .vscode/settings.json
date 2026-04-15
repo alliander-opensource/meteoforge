@@ -3,7 +3,8 @@
         "connectionId": "alliander-opensource",
         "projectKey": "alliander-opensource_meteoforge"
     },
-    "python.defaultInterpreterPath": "/home/linnr02/.cache/pypoetry/virtualenvs/meteoforge-Xj3O_PoL-py3.14/bin/python",
+    "python.defaultInterpreterPath": "",
+    "python.terminal.activateEnvironment": true,
     "psi-header.lang-config": [
         {
             "language": "python",

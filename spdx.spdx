@@ -1,0 +1,549 @@
+SPDXVersion: SPDX-2.1
+DataLicense: CC0-1.0
+SPDXID: SPDXRef-DOCUMENT
+DocumentName: meteoforge
+DocumentNamespace: http://spdx.org/spdxdocs/spdx-v2.1-669668b7-b108-4383-ace6-415239bb2f13
+Creator: Person: Anonymous ()
+Creator: Organization: Anonymous ()
+Creator: Tool: reuse-6.2.0
+Created: 2026-04-15T21:22:40Z
+CreatorComment: <text>This document was created automatically using available reuse information consistent with REUSE.</text>
+Relationship: SPDXRef-DOCUMENT DESCRIBES SPDXRef-49255584762c22f4987789524969c22f
+Relationship: SPDXRef-DOCUMENT DESCRIBES SPDXRef-52fdefc390672eba21f432643345a7a0
+Relationship: SPDXRef-DOCUMENT DESCRIBES SPDXRef-a4415352ddefda2b2bc0f9dc29fcc762
+Relationship: SPDXRef-DOCUMENT DESCRIBES SPDXRef-1124899b8d0f4576f815b912766aebd1
+Relationship: SPDXRef-DOCUMENT DESCRIBES SPDXRef-e55cc51b91516f7a9dca74514561e732
+Relationship: SPDXRef-DOCUMENT DESCRIBES SPDXRef-65291fdb27c055f48acdaf85781e579b
+Relationship: SPDXRef-DOCUMENT DESCRIBES SPDXRef-8f1dac86b10acc967e4e49527ac39315
+Relationship: SPDXRef-DOCUMENT DESCRIBES SPDXRef-0c49b1e84f14485a725f4ad5c745d5cf
+Relationship: SPDXRef-DOCUMENT DESCRIBES SPDXRef-bfa0863155d0fe986410ebe0d1575f11
+Relationship: SPDXRef-DOCUMENT DESCRIBES SPDXRef-02d5c9ac7bbb2d597f4c7de77e8000fe
+Relationship: SPDXRef-DOCUMENT DESCRIBES SPDXRef-3cbb5875a4b10faae9450fb9a976151c
+Relationship: SPDXRef-DOCUMENT DESCRIBES SPDXRef-561c742c7a05e6db6c9c3b30196fe8ac
+Relationship: SPDXRef-DOCUMENT DESCRIBES SPDXRef-6ef93befc6686f8bcb9bd46c3d3ddbfb
+Relationship: SPDXRef-DOCUMENT DESCRIBES SPDXRef-b50213cdad9ea5392bd97b3cc904533d
+Relationship: SPDXRef-DOCUMENT DESCRIBES SPDXRef-9a98be013c94dd39ae512e66f965b9c8
+Relationship: SPDXRef-DOCUMENT DESCRIBES SPDXRef-7994e2c90afd47186c545ca639a70e52
+Relationship: SPDXRef-DOCUMENT DESCRIBES SPDXRef-65127ce15c9f351a55c76781ccf29edc
+Relationship: SPDXRef-DOCUMENT DESCRIBES SPDXRef-90bc8ce7edf7e455b93729cc60d61ace
+Relationship: SPDXRef-DOCUMENT DESCRIBES SPDXRef-2963c1d772cb25d8eddb7704a08aec7f
+Relationship: SPDXRef-DOCUMENT DESCRIBES SPDXRef-6f4d9d716e67992d5c30f20344a5229b
+Relationship: SPDXRef-DOCUMENT DESCRIBES SPDXRef-458f683b9d5c2e283fa4ae5cf20f66ce
+Relationship: SPDXRef-DOCUMENT DESCRIBES SPDXRef-0f098610b2a2fc7941d44225a2a2de60
+Relationship: SPDXRef-DOCUMENT DESCRIBES SPDXRef-eb85f93fc12c6e787b2b12e6ee905f63
+Relationship: SPDXRef-DOCUMENT DESCRIBES SPDXRef-deadd6c93b71fd353395597c0cc9b92e
+Relationship: SPDXRef-DOCUMENT DESCRIBES SPDXRef-21d40beded2c8a041bfb6444e4490388
+Relationship: SPDXRef-DOCUMENT DESCRIBES SPDXRef-6576bb4c5ff4adaff65c68c6490d9b4e
+Relationship: SPDXRef-DOCUMENT DESCRIBES SPDXRef-4c474cbe7240b5e83e4dab7a9216dfde
+Relationship: SPDXRef-DOCUMENT DESCRIBES SPDXRef-77d2150939ed4a697743d4d6559b6a07
+Relationship: SPDXRef-DOCUMENT DESCRIBES SPDXRef-d93a74873ef1d2365dfca88179e13a84
+Relationship: SPDXRef-DOCUMENT DESCRIBES SPDXRef-83ba365123f9e781830f6cdef1ae988d
+Relationship: SPDXRef-DOCUMENT DESCRIBES SPDXRef-5ea778d43448625dddd5baa5471d9805
+Relationship: SPDXRef-DOCUMENT DESCRIBES SPDXRef-b75d1789bc1fdbfb15a7de3f684e7798
+Relationship: SPDXRef-DOCUMENT DESCRIBES SPDXRef-ac126a4ff673e3f3a9e144c5e5b066c3
+Relationship: SPDXRef-DOCUMENT DESCRIBES SPDXRef-a8e13b13cb439ac8fc983f9eb8c310c5
+Relationship: SPDXRef-DOCUMENT DESCRIBES SPDXRef-ded77807a6e7a5ddd1b7f1dddea64f4a
+Relationship: SPDXRef-DOCUMENT DESCRIBES SPDXRef-d4f6c504a87ff203c1f7da88bcf6f35c
+Relationship: SPDXRef-DOCUMENT DESCRIBES SPDXRef-48faec140a695dfef2aa24ee4c19242d
+Relationship: SPDXRef-DOCUMENT DESCRIBES SPDXRef-d0dda6cd262ca860cf7653f33ac03ea5
+Relationship: SPDXRef-DOCUMENT DESCRIBES SPDXRef-c9f1e09a14aab848414cc21183d72a4a
+Relationship: SPDXRef-DOCUMENT DESCRIBES SPDXRef-80a6a60d3f563068d9555ac164111c82
+Relationship: SPDXRef-DOCUMENT DESCRIBES SPDXRef-b29fdd35cccf0edad0b17c8ceea60b39
+Relationship: SPDXRef-DOCUMENT DESCRIBES SPDXRef-27dc56f3f261a28f6faa5bb2132a8341
+Relationship: SPDXRef-DOCUMENT DESCRIBES SPDXRef-603c194d2f16b43b47cd9792ed4e4eb3
+Relationship: SPDXRef-DOCUMENT DESCRIBES SPDXRef-9ae98b76d3f4b6f7be6eded4856c14e6
+Relationship: SPDXRef-DOCUMENT DESCRIBES SPDXRef-4afff4eb5aa9d2322adef3179b80913f
+Relationship: SPDXRef-DOCUMENT DESCRIBES SPDXRef-8a4b112e7ff669c963a7283c0f49da84
+Relationship: SPDXRef-DOCUMENT DESCRIBES SPDXRef-c87e55c26b6db0ea4a2c8b8271ac0ae3
+Relationship: SPDXRef-DOCUMENT DESCRIBES SPDXRef-9fc48e8f35c90354ef493686802012cc
+Relationship: SPDXRef-DOCUMENT DESCRIBES SPDXRef-7a16350dfcf746c692060f6dc13aa62c
+Relationship: SPDXRef-DOCUMENT DESCRIBES SPDXRef-a8114764eab6b2cae0393852db509dfc
+Relationship: SPDXRef-DOCUMENT DESCRIBES SPDXRef-fd928600d5ca39726e9eee448703aae3
+Relationship: SPDXRef-DOCUMENT DESCRIBES SPDXRef-b157077824eea46e6bf4880cb7b86e48
+Relationship: SPDXRef-DOCUMENT DESCRIBES SPDXRef-22d49c4e000c2e1b00470acbf2d432c7
+Relationship: SPDXRef-DOCUMENT DESCRIBES SPDXRef-ebb89a7f8380e151a8c21fc41b237914
+Relationship: SPDXRef-DOCUMENT DESCRIBES SPDXRef-b120c7d2adc4ab234b172d73bc35d309
+Relationship: SPDXRef-DOCUMENT DESCRIBES SPDXRef-4d59a3cc5c1fa9708e5f675d621f6614
+Relationship: SPDXRef-DOCUMENT DESCRIBES SPDXRef-db296d8925d19a05c92262d9c480e1d9
+Relationship: SPDXRef-DOCUMENT DESCRIBES SPDXRef-100625b7be9e3f3e6d4406ecaaccd9ef
+Relationship: SPDXRef-DOCUMENT DESCRIBES SPDXRef-61d20210b917c0a479cfe3394c79e0cb
+Relationship: SPDXRef-DOCUMENT DESCRIBES SPDXRef-06ace8400f24e9203cbb2d32e9d088be
+Relationship: SPDXRef-DOCUMENT DESCRIBES SPDXRef-bd1b3abf6de0b04bc394f9d10cf6207c
+Relationship: SPDXRef-DOCUMENT DESCRIBES SPDXRef-93392eb66eb496855ff4eba511120c19
+Relationship: SPDXRef-DOCUMENT DESCRIBES SPDXRef-58590d24ed094db29afab686066a85cb
+Relationship: SPDXRef-DOCUMENT DESCRIBES SPDXRef-cabdea61849ca1548c65827b630b7316
+Relationship: SPDXRef-DOCUMENT DESCRIBES SPDXRef-03768868150ac722ed8a1e9926c3f086
+Relationship: SPDXRef-DOCUMENT DESCRIBES SPDXRef-a6c219d7904fd0ce52e2a691bc772246
+Relationship: SPDXRef-DOCUMENT DESCRIBES SPDXRef-e9125b008e9ff7f912ff6eb8fc5498de
+Relationship: SPDXRef-DOCUMENT DESCRIBES SPDXRef-97300df1d394754b17f76a918115e1ed
+Relationship: SPDXRef-DOCUMENT DESCRIBES SPDXRef-30c7d92ae8471376b17d09bdc124361e
+Relationship: SPDXRef-DOCUMENT DESCRIBES SPDXRef-68b9fc81627fc3299eae7ae0967aeca2
+Relationship: SPDXRef-DOCUMENT DESCRIBES SPDXRef-81766f2811a4b0905eec850bdc63a300
+Relationship: SPDXRef-DOCUMENT DESCRIBES SPDXRef-b7cbae88d77f290ecf2d06c120123fc8
+
+FileName: ./.github/CODEOWNERS
+SPDXID: SPDXRef-49255584762c22f4987789524969c22f
+FileChecksum: SHA1: 31880d88a3521fcc3d09aa763bd8cb222ee45eda
+LicenseConcluded: NOASSERTION
+LicenseInfoInFile: MPL-2.0
+FileCopyrightText: <text>SPDX-FileCopyrightText: 2025-2026 Contributors to the MeteoForge project</text>
+
+FileName: ./.github/ISSUE_TEMPLATE/bug_report.md
+SPDXID: SPDXRef-52fdefc390672eba21f432643345a7a0
+FileChecksum: SHA1: a1b3041bc12ffe282f023e996effd1747d9d3be4
+LicenseConcluded: NOASSERTION
+FileCopyrightText: NONE
+
+FileName: ./.github/ISSUE_TEMPLATE/feature_request.md
+SPDXID: SPDXRef-a4415352ddefda2b2bc0f9dc29fcc762
+FileChecksum: SHA1: 3b322b61b7b24458bdde431f4f70d5b579a934bf
+LicenseConcluded: NOASSERTION
+FileCopyrightText: NONE
+
+FileName: ./.github/dependabot.yaml
+SPDXID: SPDXRef-1124899b8d0f4576f815b912766aebd1
+FileChecksum: SHA1: 9962e9eb8c6ca2e5c495ec2956a2f8621943b3ec
+LicenseConcluded: NOASSERTION
+FileCopyrightText: NONE
+
+FileName: ./.github/workflows/allowed-pr-sources-dev-release.yaml
+SPDXID: SPDXRef-e55cc51b91516f7a9dca74514561e732
+FileChecksum: SHA1: ca6e8030979c32994910a764770d4fdbdcaf163a
+LicenseConcluded: NOASSERTION
+FileCopyrightText: NONE
+
+FileName: ./.github/workflows/allowed-pr-sources-main.yaml
+SPDXID: SPDXRef-65291fdb27c055f48acdaf85781e579b
+FileChecksum: SHA1: f84505a134c06ce9a5c5831051340841b4b3503e
+LicenseConcluded: NOASSERTION
+FileCopyrightText: NONE
+
+FileName: ./.github/workflows/fuzzing.yml
+SPDXID: SPDXRef-8f1dac86b10acc967e4e49527ac39315
+FileChecksum: SHA1: 732c4c52f0aab3ac7b1b9a37e93256e1827fa52e
+LicenseConcluded: NOASSERTION
+FileCopyrightText: NONE
+
+FileName: ./.github/workflows/generate-docs.yml
+SPDXID: SPDXRef-0c49b1e84f14485a725f4ad5c745d5cf
+FileChecksum: SHA1: 2aec231b845c0527888f91c61231202b8fabaade
+LicenseConcluded: NOASSERTION
+FileCopyrightText: NONE
+
+FileName: ./.github/workflows/openssf-scorecard.yml
+SPDXID: SPDXRef-bfa0863155d0fe986410ebe0d1575f11
+FileChecksum: SHA1: b99574e7e664a3346ecbed2c257d24c13f55b65d
+LicenseConcluded: NOASSERTION
+FileCopyrightText: NONE
+
+FileName: ./.github/workflows/pr-quality-gate.yaml.yml
+SPDXID: SPDXRef-02d5c9ac7bbb2d597f4c7de77e8000fe
+FileChecksum: SHA1: 570b472ba58b9166120751db73b9e00c31101faf
+LicenseConcluded: NOASSERTION
+FileCopyrightText: NONE
+
+FileName: ./.github/workflows/pre-commit/action.yaml
+SPDXID: SPDXRef-3cbb5875a4b10faae9450fb9a976151c
+FileChecksum: SHA1: 87700dce46b1077cf48a5131ca3c6b8b3ffde7ee
+LicenseConcluded: NOASSERTION
+FileCopyrightText: NONE
+
+FileName: ./.github/workflows/pytest/action.yaml
+SPDXID: SPDXRef-561c742c7a05e6db6c9c3b30196fe8ac
+FileChecksum: SHA1: 52b3df4282140fa0a7eaddb1b970c199d9421e2b
+LicenseConcluded: NOASSERTION
+FileCopyrightText: NONE
+
+FileName: ./.github/workflows/sonar/action.yaml
+SPDXID: SPDXRef-6ef93befc6686f8bcb9bd46c3d3ddbfb
+FileChecksum: SHA1: f9c3b055058276416b97191229fb55a231648e68
+LicenseConcluded: NOASSERTION
+FileCopyrightText: NONE
+
+FileName: ./.gitignore
+SPDXID: SPDXRef-b50213cdad9ea5392bd97b3cc904533d
+FileChecksum: SHA1: e6995772fdb2ccf696f336f59ec74d30b46e1254
+LicenseConcluded: NOASSERTION
+FileCopyrightText: NONE
+
+FileName: ./.markdownlint.yaml
+SPDXID: SPDXRef-9a98be013c94dd39ae512e66f965b9c8
+FileChecksum: SHA1: 4773c8be45fcc4015ba0da3d6cc0d69d6fabe5cf
+LicenseConcluded: NOASSERTION
+FileCopyrightText: NONE
+
+FileName: ./.markdownlintignore
+SPDXID: SPDXRef-7994e2c90afd47186c545ca639a70e52
+FileChecksum: SHA1: 0d1df36e65ca5796397244de3a3c5ef63a165735
+LicenseConcluded: NOASSERTION
+FileCopyrightText: NONE
+
+FileName: ./.pre-commit-config.yaml
+SPDXID: SPDXRef-65127ce15c9f351a55c76781ccf29edc
+FileChecksum: SHA1: 2a6f9c0c123e60159c7b01a938373ad3787c8e1b
+LicenseConcluded: NOASSERTION
+FileCopyrightText: NONE
+
+FileName: ./.sonarcloud.properties
+SPDXID: SPDXRef-90bc8ce7edf7e455b93729cc60d61ace
+FileChecksum: SHA1: ddef86641e2df6a156185fcb61951274c43f7a89
+LicenseConcluded: NOASSERTION
+FileCopyrightText: <text>SPDX-FileCopyrightText: 2024-2025 Copyright Contributors to the MeteoForge project)</text>
+
+FileName: ./.vscode/settings.json
+SPDXID: SPDXRef-2963c1d772cb25d8eddb7704a08aec7f
+FileChecksum: SHA1: 21a9768b77f442b1fc5558d16e7b7e1e101bfd95
+LicenseConcluded: NOASSERTION
+LicenseInfoInFile: MPL-2.0
+FileCopyrightText: <text>SPDX-FileCopyrightText: 2025-<<year>> Contributors to the MeteoForge project",</text>
+
+FileName: ./CODE_OF_CONDUCT.md
+SPDXID: SPDXRef-6f4d9d716e67992d5c30f20344a5229b
+FileChecksum: SHA1: e589bd257994fe54d9ca6a12a0cfc23b8e1397bd
+LicenseConcluded: NOASSERTION
+FileCopyrightText: <text>SPDX-FileCopyrightText: 2024-2025 Copyright Contributors to the MeteoForge project)</text>
+
+FileName: ./CONTRIBUTING.md
+SPDXID: SPDXRef-458f683b9d5c2e283fa4ae5cf20f66ce
+FileChecksum: SHA1: 3bfb7be7dd9651fa2396d05b8f2910d8be1e5298
+LicenseConcluded: NOASSERTION
+LicenseInfoInFile: MPL-2.0
+FileCopyrightText: <text>SPDX-FileCopyrightText: 2019-2025 Alliander N.V.
+SPDX-FileCopyrightText: 2024-2025 Copyright Contributors to the MeteoForge project)</text>
+
+FileName: ./PROJECT_GOVERNANCE.md
+SPDXID: SPDXRef-0f098610b2a2fc7941d44225a2a2de60
+FileChecksum: SHA1: 1b145fb4879c1ea6c612897396a33ae301c7387d
+LicenseConcluded: NOASSERTION
+FileCopyrightText: <text>SPDX-FileCopyrightText: 2024-2025 Copyright Contributors to the MeteoForge project)</text>
+
+FileName: ./README.md
+SPDXID: SPDXRef-eb85f93fc12c6e787b2b12e6ee905f63
+FileChecksum: SHA1: 1ce2878f6498fe9214b4e962b88b13fe4cc1675f
+LicenseConcluded: NOASSERTION
+FileCopyrightText: <text>SPDX-FileCopyrightText: 2024-2025 Copyright Contributors to the MeteoForge project)</text>
+
+FileName: ./SECURITY.md
+SPDXID: SPDXRef-deadd6c93b71fd353395597c0cc9b92e
+FileChecksum: SHA1: 957972e7d0fc34f6d8dcc14760c638d03ea07aa5
+LicenseConcluded: NOASSERTION
+FileCopyrightText: <text>SPDX-FileCopyrightText: 2024-2025 Copyright Contributors to the MeteoForge project)</text>
+
+FileName: ./docs/Getting Started/meteoforge-installation-and-overview.md
+SPDXID: SPDXRef-21d40beded2c8a041bfb6444e4490388
+FileChecksum: SHA1: be1cd143133b7913c8b3128c3187d6bb2549d324
+LicenseConcluded: NOASSERTION
+FileCopyrightText: NONE
+
+FileName: ./docs/Getting Started/model-buildup.md
+SPDXID: SPDXRef-6576bb4c5ff4adaff65c68c6490d9b4e
+FileChecksum: SHA1: 5b0747374d41ff661789bd85a1d0e061bc904c0d
+LicenseConcluded: NOASSERTION
+FileCopyrightText: NONE
+
+FileName: ./docs/Getting Started/source-buildup.md
+SPDXID: SPDXRef-4c474cbe7240b5e83e4dab7a9216dfde
+FileChecksum: SHA1: b5fe950f9d4eef084e694ea20b72622c70fa6fea
+LicenseConcluded: NOASSERTION
+FileCopyrightText: NONE
+
+FileName: ./docs/Tutorials/accessing-model-data.md
+SPDXID: SPDXRef-77d2150939ed4a697743d4d6559b6a07
+FileChecksum: SHA1: ea4db453716e2a03849b36adf661d7c2cf95a17e
+LicenseConcluded: NOASSERTION
+FileCopyrightText: NONE
+
+FileName: ./docs/css/extra.css
+SPDXID: SPDXRef-d93a74873ef1d2365dfca88179e13a84
+FileChecksum: SHA1: d33a08317144038844ad5c9c8958f5bab214e732
+LicenseConcluded: NOASSERTION
+FileCopyrightText: NONE
+
+FileName: ./docs/example-meteo-source/meteo_sources/__init__.py
+SPDXID: SPDXRef-83ba365123f9e781830f6cdef1ae988d
+FileChecksum: SHA1: bddfaaeb48b7e2da4b6c634088dfb2b2bfa5d924
+LicenseConcluded: NOASSERTION
+LicenseInfoInFile: MPL-2.0
+FileCopyrightText: <text>SPDX-FileCopyrightText: 2024-2025 Copyright Contributors to the MeteoForge project</text>
+
+FileName: ./docs/example-meteo-source/meteo_sources/example_source/__init__.py
+SPDXID: SPDXRef-5ea778d43448625dddd5baa5471d9805
+FileChecksum: SHA1: bddfaaeb48b7e2da4b6c634088dfb2b2bfa5d924
+LicenseConcluded: NOASSERTION
+LicenseInfoInFile: MPL-2.0
+FileCopyrightText: <text>SPDX-FileCopyrightText: 2024-2025 Copyright Contributors to the MeteoForge project</text>
+
+FileName: ./docs/example-meteo-source/meteo_sources/example_source/example_model_one/__init__.py
+SPDXID: SPDXRef-b75d1789bc1fdbfb15a7de3f684e7798
+FileChecksum: SHA1: bddfaaeb48b7e2da4b6c634088dfb2b2bfa5d924
+LicenseConcluded: NOASSERTION
+LicenseInfoInFile: MPL-2.0
+FileCopyrightText: <text>SPDX-FileCopyrightText: 2024-2025 Copyright Contributors to the MeteoForge project</text>
+
+FileName: ./docs/example-meteo-source/meteo_sources/example_source/example_model_one/model.py
+SPDXID: SPDXRef-ac126a4ff673e3f3a9e144c5e5b066c3
+FileChecksum: SHA1: bddfaaeb48b7e2da4b6c634088dfb2b2bfa5d924
+LicenseConcluded: NOASSERTION
+LicenseInfoInFile: MPL-2.0
+FileCopyrightText: <text>SPDX-FileCopyrightText: 2024-2025 Copyright Contributors to the MeteoForge project</text>
+
+FileName: ./docs/example-meteo-source/meteo_sources/example_source/example_model_one/update.py
+SPDXID: SPDXRef-a8e13b13cb439ac8fc983f9eb8c310c5
+FileChecksum: SHA1: bddfaaeb48b7e2da4b6c634088dfb2b2bfa5d924
+LicenseConcluded: NOASSERTION
+LicenseInfoInFile: MPL-2.0
+FileCopyrightText: <text>SPDX-FileCopyrightText: 2024-2025 Copyright Contributors to the MeteoForge project</text>
+
+FileName: ./docs/example-meteo-source/meteo_sources/example_source/example_model_two/__init__.py
+SPDXID: SPDXRef-ded77807a6e7a5ddd1b7f1dddea64f4a
+FileChecksum: SHA1: bddfaaeb48b7e2da4b6c634088dfb2b2bfa5d924
+LicenseConcluded: NOASSERTION
+LicenseInfoInFile: MPL-2.0
+FileCopyrightText: <text>SPDX-FileCopyrightText: 2024-2025 Copyright Contributors to the MeteoForge project</text>
+
+FileName: ./docs/example-meteo-source/meteo_sources/example_source/example_model_two/model.py
+SPDXID: SPDXRef-d4f6c504a87ff203c1f7da88bcf6f35c
+FileChecksum: SHA1: bddfaaeb48b7e2da4b6c634088dfb2b2bfa5d924
+LicenseConcluded: NOASSERTION
+LicenseInfoInFile: MPL-2.0
+FileCopyrightText: <text>SPDX-FileCopyrightText: 2024-2025 Copyright Contributors to the MeteoForge project</text>
+
+FileName: ./docs/example-meteo-source/meteo_sources/example_source/example_model_two/update.py
+SPDXID: SPDXRef-48faec140a695dfef2aa24ee4c19242d
+FileChecksum: SHA1: bddfaaeb48b7e2da4b6c634088dfb2b2bfa5d924
+LicenseConcluded: NOASSERTION
+LicenseInfoInFile: MPL-2.0
+FileCopyrightText: <text>SPDX-FileCopyrightText: 2024-2025 Copyright Contributors to the MeteoForge project</text>
+
+FileName: ./docs/example-meteo-source/meteo_sources/example_source/source_config.yaml.py
+SPDXID: SPDXRef-d0dda6cd262ca860cf7653f33ac03ea5
+FileChecksum: SHA1: bddfaaeb48b7e2da4b6c634088dfb2b2bfa5d924
+LicenseConcluded: NOASSERTION
+LicenseInfoInFile: MPL-2.0
+FileCopyrightText: <text>SPDX-FileCopyrightText: 2024-2025 Copyright Contributors to the MeteoForge project</text>
+
+FileName: ./docs/images/gitflow.svg
+SPDXID: SPDXRef-c9f1e09a14aab848414cc21183d72a4a
+FileChecksum: SHA1: bddc333192a320acb9d6144eb4488fb6805307a3
+LicenseConcluded: NOASSERTION
+LicenseInfoInFile: MPL-2.0
+FileCopyrightText: <text>SPDX-FileCopyrightText: 2024-2025 Copyright Contributors to the MeteoForge project</text>
+
+FileName: ./docs/images/meteoforge_logo.png
+SPDXID: SPDXRef-80a6a60d3f563068d9555ac164111c82
+FileChecksum: SHA1: b9e1795fe90ca9460ba0cab59a77dad9d741bd13
+LicenseConcluded: NOASSERTION
+FileCopyrightText: NONE
+
+FileName: ./docs/index.md
+SPDXID: SPDXRef-b29fdd35cccf0edad0b17c8ceea60b39
+FileChecksum: SHA1: 2ed0119442b4eca5893ffb710eb83ab1a30e2574
+LicenseConcluded: NOASSERTION
+FileCopyrightText: NONE
+
+FileName: ./docs/project-history.md
+SPDXID: SPDXRef-27dc56f3f261a28f6faa5bb2132a8341
+FileChecksum: SHA1: f857eb6f34768ead141103d738cb1a985ca0363f
+LicenseConcluded: NOASSERTION
+FileCopyrightText: NONE
+
+FileName: ./poetry.lock
+SPDXID: SPDXRef-603c194d2f16b43b47cd9792ed4e4eb3
+FileChecksum: SHA1: 4f34f5b79a473262c577ed99619ff627193f39ff
+LicenseConcluded: NOASSERTION
+FileCopyrightText: NONE
+
+FileName: ./pyproject.toml
+SPDXID: SPDXRef-9ae98b76d3f4b6f7be6eded4856c14e6
+FileChecksum: SHA1: d6d84a5d2cc83d19e3c40067654c0467338f29c0
+LicenseConcluded: NOASSERTION
+FileCopyrightText: NONE
+
+FileName: ./src/__init__.py
+SPDXID: SPDXRef-4afff4eb5aa9d2322adef3179b80913f
+FileChecksum: SHA1: 8fff51e061ad8e6e4b5261cb32506a3240cdb97a
+LicenseConcluded: NOASSERTION
+LicenseInfoInFile: MPL-2.0
+FileCopyrightText: <text>SPDX-FileCopyrightText: 2025-2026 Contributors to the MeteoForge project</text>
+
+FileName: ./src/meteoforge/__init__.py
+SPDXID: SPDXRef-8a4b112e7ff669c963a7283c0f49da84
+FileChecksum: SHA1: 8fff51e061ad8e6e4b5261cb32506a3240cdb97a
+LicenseConcluded: NOASSERTION
+LicenseInfoInFile: MPL-2.0
+FileCopyrightText: <text>SPDX-FileCopyrightText: 2025-2026 Contributors to the MeteoForge project</text>
+
+FileName: ./src/meteoforge/core/__init__.py
+SPDXID: SPDXRef-c87e55c26b6db0ea4a2c8b8271ac0ae3
+FileChecksum: SHA1: bddfaaeb48b7e2da4b6c634088dfb2b2bfa5d924
+LicenseConcluded: NOASSERTION
+LicenseInfoInFile: MPL-2.0
+FileCopyrightText: <text>SPDX-FileCopyrightText: 2024-2025 Copyright Contributors to the MeteoForge project</text>
+
+FileName: ./src/meteoforge/core/controller.py
+SPDXID: SPDXRef-9fc48e8f35c90354ef493686802012cc
+FileChecksum: SHA1: 8fff51e061ad8e6e4b5261cb32506a3240cdb97a
+LicenseConcluded: NOASSERTION
+LicenseInfoInFile: MPL-2.0
+FileCopyrightText: <text>SPDX-FileCopyrightText: 2025-2026 Contributors to the MeteoForge project</text>
+
+FileName: ./src/meteoforge/core/manager.py
+SPDXID: SPDXRef-7a16350dfcf746c692060f6dc13aa62c
+FileChecksum: SHA1: 8fff51e061ad8e6e4b5261cb32506a3240cdb97a
+LicenseConcluded: NOASSERTION
+LicenseInfoInFile: MPL-2.0
+FileCopyrightText: <text>SPDX-FileCopyrightText: 2025-2026 Contributors to the MeteoForge project</text>
+
+FileName: ./src/meteoforge/core/model.py
+SPDXID: SPDXRef-a8114764eab6b2cae0393852db509dfc
+FileChecksum: SHA1: 8fff51e061ad8e6e4b5261cb32506a3240cdb97a
+LicenseConcluded: NOASSERTION
+LicenseInfoInFile: MPL-2.0
+FileCopyrightText: <text>SPDX-FileCopyrightText: 2025-2026 Contributors to the MeteoForge project</text>
+
+FileName: ./src/meteoforge/core/source.py
+SPDXID: SPDXRef-fd928600d5ca39726e9eee448703aae3
+FileChecksum: SHA1: 8fff51e061ad8e6e4b5261cb32506a3240cdb97a
+LicenseConcluded: NOASSERTION
+LicenseInfoInFile: MPL-2.0
+FileCopyrightText: <text>SPDX-FileCopyrightText: 2025-2026 Contributors to the MeteoForge project</text>
+
+FileName: ./src/meteoforge/logging/__init__.py
+SPDXID: SPDXRef-b157077824eea46e6bf4880cb7b86e48
+FileChecksum: SHA1: 8fff51e061ad8e6e4b5261cb32506a3240cdb97a
+LicenseConcluded: NOASSERTION
+LicenseInfoInFile: MPL-2.0
+FileCopyrightText: <text>SPDX-FileCopyrightText: 2025-2026 Contributors to the MeteoForge project</text>
+
+FileName: ./src/meteoforge/logging/logging.py
+SPDXID: SPDXRef-22d49c4e000c2e1b00470acbf2d432c7
+FileChecksum: SHA1: f0193bb39e8afdb4a17e1e9cea8073fe4a3b8d5e
+LicenseConcluded: NOASSERTION
+LicenseInfoInFile: MPL-2.0
+FileCopyrightText: <text>SPDX-FileCopyrightText: 2025-2026 Contributors to the MeteoForge project</text>
+
+FileName: ./src/meteoforge/logging/logging_config.yaml
+SPDXID: SPDXRef-ebb89a7f8380e151a8c21fc41b237914
+FileChecksum: SHA1: 6e1869d0c653a936ab0cf273b871d0f5b7e30bb2
+LicenseConcluded: NOASSERTION
+FileCopyrightText: NONE
+
+FileName: ./src/meteoforge/parameters/__init__.py
+SPDXID: SPDXRef-b120c7d2adc4ab234b172d73bc35d309
+FileChecksum: SHA1: 8fff51e061ad8e6e4b5261cb32506a3240cdb97a
+LicenseConcluded: NOASSERTION
+LicenseInfoInFile: MPL-2.0
+FileCopyrightText: <text>SPDX-FileCopyrightText: 2025-2026 Contributors to the MeteoForge project</text>
+
+FileName: ./src/meteoforge/parameters/parameters.py
+SPDXID: SPDXRef-4d59a3cc5c1fa9708e5f675d621f6614
+FileChecksum: SHA1: 8fff51e061ad8e6e4b5261cb32506a3240cdb97a
+LicenseConcluded: NOASSERTION
+LicenseInfoInFile: MPL-2.0
+FileCopyrightText: <text>SPDX-FileCopyrightText: 2025-2026 Contributors to the MeteoForge project</text>
+
+FileName: ./src/meteoforge/spatial_temporal/__init__.py
+SPDXID: SPDXRef-db296d8925d19a05c92262d9c480e1d9
+FileChecksum: SHA1: 8fff51e061ad8e6e4b5261cb32506a3240cdb97a
+LicenseConcluded: NOASSERTION
+LicenseInfoInFile: MPL-2.0
+FileCopyrightText: <text>SPDX-FileCopyrightText: 2025-2026 Contributors to the MeteoForge project</text>
+
+FileName: ./src/meteoforge/spatial_temporal/locations.py
+SPDXID: SPDXRef-100625b7be9e3f3e6d4406ecaaccd9ef
+FileChecksum: SHA1: 8c55a9b6ce78929d525ca056964b79061d836d9f
+LicenseConcluded: NOASSERTION
+LicenseInfoInFile: MPL-2.0
+FileCopyrightText: <text>SPDX-FileCopyrightText: 2025-2026 Contributors to the MeteoForge project</text>
+
+FileName: ./src/meteoforge/spatial_temporal/periods.py
+SPDXID: SPDXRef-61d20210b917c0a479cfe3394c79e0cb
+FileChecksum: SHA1: 8fff51e061ad8e6e4b5261cb32506a3240cdb97a
+LicenseConcluded: NOASSERTION
+LicenseInfoInFile: MPL-2.0
+FileCopyrightText: <text>SPDX-FileCopyrightText: 2025-2026 Contributors to the MeteoForge project</text>
+
+FileName: ./src/meteoforge/spatial_temporal/validators.py
+SPDXID: SPDXRef-06ace8400f24e9203cbb2d32e9d088be
+FileChecksum: SHA1: e573781b5439da5eeb34755fcbb14dd77b4c4269
+LicenseConcluded: NOASSERTION
+LicenseInfoInFile: MPL-2.0
+FileCopyrightText: <text>SPDX-FileCopyrightText: 2025-2026 Contributors to the MeteoForge project</text>
+
+FileName: ./src/meteoforge_tools/README.md
+SPDXID: SPDXRef-bd1b3abf6de0b04bc394f9d10cf6207c
+FileChecksum: SHA1: f30e1106655170254e6e4872884609434c6c7b53
+LicenseConcluded: NOASSERTION
+FileCopyrightText: <text>SPDX-FileCopyrightText: 2024-2025 Copyright Contributors to the MeteoForge project)</text>
+
+FileName: ./src/meteoforge_tools/__init__.py
+SPDXID: SPDXRef-93392eb66eb496855ff4eba511120c19
+FileChecksum: SHA1: 8fff51e061ad8e6e4b5261cb32506a3240cdb97a
+LicenseConcluded: NOASSERTION
+LicenseInfoInFile: MPL-2.0
+FileCopyrightText: <text>SPDX-FileCopyrightText: 2025-2026 Contributors to the MeteoForge project</text>
+
+FileName: ./src/meteoforge_tools/netfcd_to_zarr_conversion.py
+SPDXID: SPDXRef-58590d24ed094db29afab686066a85cb
+FileChecksum: SHA1: 8fff51e061ad8e6e4b5261cb32506a3240cdb97a
+LicenseConcluded: NOASSERTION
+LicenseInfoInFile: MPL-2.0
+FileCopyrightText: <text>SPDX-FileCopyrightText: 2025-2026 Contributors to the MeteoForge project</text>
+
+FileName: ./tests/fuzz/test_fuzz_example.py
+SPDXID: SPDXRef-cabdea61849ca1548c65827b630b7316
+FileChecksum: SHA1: 9ddeb0bcf59175888b3ddc8fb0c105ea513b5475
+LicenseConcluded: NOASSERTION
+FileCopyrightText: NONE
+
+FileName: ./tests/fuzz/test_fuzz_validators.py
+SPDXID: SPDXRef-03768868150ac722ed8a1e9926c3f086
+FileChecksum: SHA1: 5232c8094e93d3817c71c2280fdecac7c1a7b2fd
+LicenseConcluded: NOASSERTION
+LicenseInfoInFile: MPL-2.0
+FileCopyrightText: <text>SPDX-FileCopyrightText: 2025-2026 Contributors to the MeteoForge project</text>
+
+FileName: ./tests/unit/conftest.py
+SPDXID: SPDXRef-a6c219d7904fd0ce52e2a691bc772246
+FileChecksum: SHA1: 8fff51e061ad8e6e4b5261cb32506a3240cdb97a
+LicenseConcluded: NOASSERTION
+LicenseInfoInFile: MPL-2.0
+FileCopyrightText: <text>SPDX-FileCopyrightText: 2025-2026 Contributors to the MeteoForge project</text>
+
+FileName: ./tests/unit/test_locations.py
+SPDXID: SPDXRef-e9125b008e9ff7f912ff6eb8fc5498de
+FileChecksum: SHA1: fa7fdf96df59a24986680bfc11c7bee293e4b628
+LicenseConcluded: NOASSERTION
+LicenseInfoInFile: MPL-2.0
+FileCopyrightText: <text>SPDX-FileCopyrightText: 2025-2026 Contributors to the MeteoForge project</text>
+
+FileName: ./tests/unit/test_validators.py
+SPDXID: SPDXRef-97300df1d394754b17f76a918115e1ed
+FileChecksum: SHA1: f6737ed5c3e7318d2feee20a1347b5799b6f9bbe
+LicenseConcluded: NOASSERTION
+LicenseInfoInFile: MPL-2.0
+FileCopyrightText: <text>SPDX-FileCopyrightText: 2025-2026 Contributors to the MeteoForge project</text>
+
+FileName: ./typings/meteoforge/logging/logging.pyi
+SPDXID: SPDXRef-30c7d92ae8471376b17d09bdc124361e
+FileChecksum: SHA1: 87852b9853d45911b59d0199a914d6707fbf2ae0
+LicenseConcluded: NOASSERTION
+FileCopyrightText: NONE
+
+FileName: ./typings/meteoforge/spatial_temporal/locations.pyi
+SPDXID: SPDXRef-68b9fc81627fc3299eae7ae0967aeca2
+FileChecksum: SHA1: 8d815b3b2394e3eaa206c69ca912ae7b608259ad
+LicenseConcluded: NOASSERTION
+FileCopyrightText: NONE
+
+FileName: ./typings/meteoforge/spatial_temporal/validators.pyi
+SPDXID: SPDXRef-81766f2811a4b0905eec850bdc63a300
+FileChecksum: SHA1: d73798e2641ef23724b2ef086c17ed52829bdee0
+LicenseConcluded: NOASSERTION
+FileCopyrightText: NONE
+
+FileName: ./zensical.toml
+SPDXID: SPDXRef-b7cbae88d77f290ecf2d06c120123fc8
+FileChecksum: SHA1: 03a32a762fd308fce2279d11fe8fcd38a9f8d866
+LicenseConcluded: NOASSERTION
+FileCopyrightText: <text>Copyright 2026 &copy; Alliander NV. All rights reserved.<br></text>
