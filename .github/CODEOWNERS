@@ -5,6 +5,6 @@
 
 * @alliander-opensource/wpla-alliander
 
-# The following rule assigns ownership of the CODEOWNERS file itself. 
+# The following rule assigns ownership of the CODEOWNERS file itself.
 # Note: The last matching rule takes precedence according to GitHub documentation.
 .github/CODEOWNERS @rflinnenbank

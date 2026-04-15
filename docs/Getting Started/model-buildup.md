@@ -2,6 +2,11 @@
 icon: lucide/cloud-download
 ---
 
+<!--
+  SPDX-FileCopyrightText: 2025-2026 Contributors to the MeteoForge project
+  SPDX-License-Identifier: MPL-2.0
+-->
+
 # MeteoForge Models
 
 ## Introduction to Models
@@ -21,9 +26,8 @@ Model interactions are grouped in the following interaction types:
 3. Reformatting data acquired from the model into other unit- or filesystems
 4. (Optionally) If configured, supplying capabilities to store and retrieve the data via a data storage/cache.
 
-
-
 ## Constructing a New Model
+
 ...
 
 ## Validating Your Model
@@ -32,12 +36,13 @@ Simply start by importing your Model within a Python Interpreter. If anything is
 
 To confirm that everything functions of your model, just run the `validate()` method.
 
-#### Valid Models:
+### Valid Models
 
 ``` py
 > from meteoforge.sources.<my_custom_source>.models import <my_custom_model>
 > <my_custom_model>.validate()
 ```
+
 ``` console
 Model:
 - Name: <My model's name>
@@ -49,14 +54,14 @@ Properties:
 - Base location type: KNMI Weather Station
 - Supports Spatial Conversion: Yes
 Parameters:
-- 2m Temperature: K > Convertable
-- 2m Wind speed : Bft > Convertable
-- 10m Vision range: Bunny Vision Range > Non-Convertable
+- 2m Temperature: K > Convertible
+- 2m Wind speed : Bft > Convertible
+- 10m Vision range: Bunny Vision Range > Non-Convertible
 ```
 
-Valid Model objects should return a listing of model properties without errors. Please note that a valid model can still contain meteorological parameters that aren't considered convertable into a standard unit format. When converting data, these parameters will remain unchanged and retain their specific unit types.
+Valid Model objects should return a listing of model properties without errors. Please note that a valid model can still contain meteorological parameters that aren't considered convertible into a standard unit format. When converting data, these parameters will remain unchanged and retain their specific unit types.
 
-#### Invalid Models
+### Invalid Models
 
 If Models are constructed properly, but certain properties or settings have issues validating as properly functioning, you may get another response:
 
@@ -64,6 +69,7 @@ If Models are constructed properly, but certain properties or settings have issu
 > from meteoforge.sources.<my_custom_source>.models import <my_custom_model>
 > <my_custom_model>.validate()
 ```
+
 ``` console
 Model:
 - Name: <My model's name>
@@ -77,10 +83,10 @@ Properties:
 - Base location type: WGS84 lat/lon coordinates
 - Supports Spatial Conversion: Yes
 Parameters:
-- 2m Temperature: K > Convertable
-- 2m Wind speed : Bft > Convertable
+- 2m Temperature: K > Convertible
+- 2m Wind speed : Bft > Convertible
 - 10m Vision range: FAIL
-    - Unit was set to convertable type "Bunny Vision Range", but no conversion rules were found
+    - Unit was set to convertible type "Bunny Vision Range", but no conversion rules were found
 ```
 
 As you can see, any properties or parameters that are technically properly configured, but can't properly validate, will generate error messages trying to specify what is wrongly configured or set.
