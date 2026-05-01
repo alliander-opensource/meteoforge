@@ -22,7 +22,7 @@ jobs:
     if: ${{ !github.event.pull_request.draft }}
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4.3.1
+      - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
       # NOTE: point "uses:" to the DIRECTORY that contains action.yaml
       # If your composite is at ./pre-commit/action.yaml, use "./pre-commit"
       - name: Run pre-commit composite
@@ -41,7 +41,7 @@ jobs:
       matrix:
         python-version: ${{ fromJSON(vars.SUPPORTED_PYTHON_VERSIONS) }}
     steps:
-      - uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4.3.1
+      - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
       - name: Run pytest composite
         uses: ./.github/workflows/pytest
         with:
