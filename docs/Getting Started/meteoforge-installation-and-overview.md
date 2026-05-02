@@ -2,37 +2,45 @@
 icon: lucide/package-check
 ---
 
+<!--
+  SPDX-FileCopyrightText: 2025-2026 Contributors to the MeteoForge project
+  SPDX-License-Identifier: MPL-2.0
+-->
+
 # MeteoForge Installation and Overview
 
 ## Installing the MeteoForge Package
 
-
 This section explains how to install the `meteoforge` package using some of the most common Python package installers.
 
 **Context differences:**
+
 - **pip** installs the package globally (system or user) or into a virtual environment if one is activated. This is suitable for quick, system-wide installs or for use in scripts and CLI tools.
 - **Poetry** and **UV** are project-based tools. They add the package as a dependency to your project's configuration and lock files, ensuring reproducible environments. Use these when working within a project directory to manage dependencies in an isolated, version-controlled way.
-
 
 Regardless of context, the `meteoforge` package can be directly installed from PyPI using the following methods:
 
 **Using pip:**
+
 ``` bash
 pip install transformer-thermal-model
 ```
 
 **Adding to a project using Poetry:**
+
 ``` bash
 poetry add transformer-thermal-model
 ```
+
 **Adding to a project using UV:**
+
 ``` bash
 uv add transformer-thermal-model
 ```
 
 ## Verifying the installation
 
-To verify that the installation was succesfull, within the environment the package was installed, run the following command to verify proper installation.
+To verify that the installation was successful, within the environment the package was installed, run the following command to verify proper installation.
 
 ``` bash
 meteoforge-validation
@@ -65,7 +73,8 @@ MeteoForge - version 1.0.1
 Validation of one or more components failed. The MeteoForge team suggests trying a clean install, and if that does not work, checking on our repository's Issues page at:
 https://github.com/alliander-opensource/meteoforge/issues
 ```
-In this case you should follow the given instructions and either try again using a clean install or check the Issues pages for any issues resembling yours. 
+
+In this case you should follow the given instructions and either try again using a clean install or check the Issues pages for any issues resembling yours.
 
 If installation failed completely or you are simply not within the proper installation environment the command should simply not be recognized.
 

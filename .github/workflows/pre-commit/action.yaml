@@ -1,3 +1,6 @@
+# SPDX-FileCopyrightText: 2025-2026 Contributors to the MeteoForge project
+# SPDX-License-Identifier: MPL-2.0
+
 name: Pre-commit
 description: Sets up Python and Poetry and runs pre-commit
 
@@ -10,11 +13,11 @@ runs:
   using: "composite"
   steps:
     - name: Checkout repository
-      uses: actions/checkout@v3
+      uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
 
     - name: Setup Python
       if: ${{ hashFiles('.pre-commit-config.yaml') != '' }}
-      uses: actions/setup-python@v3
+      uses: actions/setup-python@a309ff8b426b58ec0e2a45f0f869d46889d02405 # v6.2.0
       with:
         python-version: ${{ inputs.python-version }}
 
@@ -22,7 +25,7 @@ runs:
     - name: Validate Python version
       if: ${{ hashFiles('.pre-commit-config.yaml') != '' }}
       run: |
-        ALLOWED_VERSIONS="3.14 3.15"
+        ALLOWED_VERSIONS="3.13"
         if ! echo "$ALLOWED_VERSIONS" | grep -wq "${{ inputs.python-version }}"; then
           echo "Error: python-version ${{ inputs.python-version }} is not allowed. Allowed: $ALLOWED_VERSIONS"
           exit 1

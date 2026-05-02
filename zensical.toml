@@ -1,4 +1,6 @@
-[project] 
+# SPDX-FileCopyrightText: 2025-2026 Contributors to the MeteoForge project
+# SPDX-License-Identifier: MPL-2.0
+[project]
 
 site_name = "MeteoForge"
 site_description = "Documentation for the MeteoForge project."
@@ -17,7 +19,7 @@ This project is licensed under the MPL 2.0. See LICENSE.md for details.
 # "docs_dir". The definition below demonstrates how a navigation structure
 # can be defined using TOML syntax.
 #
-# Read more: https://zensical.org/docs/setup/navigation/    
+# Read more: https://zensical.org/docs/setup/navigation/
 # nav = [
 #   { "Get started" = "index.md" },
 #   { "Markdown in 5min" = "markdown.md" },

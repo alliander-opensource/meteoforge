@@ -6,6 +6,11 @@ labels: ''
 assignees: ''
 ---
 
+<!--
+  SPDX-FileCopyrightText: 2025-2026 Contributors to the MeteoForge project
+  SPDX-License-Identifier: MPL-2.0
+-->
+
 ## **Describe the Bug**
 
 Provide a clear and concise description of the issue.

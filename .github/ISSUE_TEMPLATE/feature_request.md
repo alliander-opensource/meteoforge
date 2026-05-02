@@ -6,6 +6,11 @@ labels: ''
 assignees: ''
 ---
 
+<!--
+  SPDX-FileCopyrightText: 2025-2026 Contributors to the MeteoForge project
+  SPDX-License-Identifier: MPL-2.0
+-->
+
 ## **Is Your Feature Request Related to a Problem? Please Describe**
 
 Provide a clear and concise description of the problem. For example: "I'm frustrated when [...]"
