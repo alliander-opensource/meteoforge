@@ -20,7 +20,7 @@ jobs:
       - uses: actions/setup-python@a309ff8b426b58ec0e2a45f0f869d46889d02405 # v6.2.0
         with:
           python-version: 3.x
-      - run: pip install zensical
+      - run: "pip install zensical==2026.5.2 --require-hashes --hash=sha256:ba187d2d555da85a5cde635ef32f7bee1d3634522f25b21d58a14f41a128656c --only-binary :all:"
       - run: zensical build --clean
       - uses: actions/upload-pages-artifact@fc324d3547104276b827a68afc52ff2a11cc49c9 # v5.0.0
         with:

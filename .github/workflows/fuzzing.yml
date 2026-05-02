@@ -26,9 +26,9 @@ jobs:
       - name: Set up Python
         uses: actions/setup-python@a309ff8b426b58ec0e2a45f0f869d46889d02405 # v6.2.0
         with:
-          python-version: '3.11'
+          python-version: '3.13'
       - name: Install Atheris
-        run: pip install atheris
+        run: "pip install atheris==3.0.0 --require-hashes --hash=sha256:a402cdca8a650d1371050b1f9552eb4cdc488d2db64950d603c4560318365eac --only-binary :all:"
       - name: Run Python fuzz tests
         run: |
           python3 -m atheris tests/fuzz/test_fuzz_example.py || true
