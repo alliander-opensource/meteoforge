@@ -3,6 +3,6 @@
   SPDX-License-Identifier: MPL-2.0
 -->
 
-# MeteoForge Tools
+# About this project's main developers and history
 
 ...

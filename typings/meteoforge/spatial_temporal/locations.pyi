@@ -1,9 +1,14 @@
-from _typeshed import Incomplete
+# SPDX-FileCopyrightText: 2025-2026 Contributors to the MeteoForge project
+# SPDX-License-Identifier: MPL-2.0
+
 from collections.abc import Iterable
-from meteoforge.spatial_temporal.validators import validate_mf_location as validate_mf_location
+from typing import Any
+
+from _typeshed import Incomplete
 from pyproj import CRS
 from shapely.geometry import Polygon
-from typing import Any
+
+from meteoforge.spatial_temporal.validators import validate_mf_location as validate_mf_location
 
 class MFLocation:
     crs: Incomplete
@@ -40,4 +45,6 @@ class MFLocationVector:
     def __delitem__(self, idx: int) -> None: ...
     def __len__(self) -> int: ...
 
-def fuzzy_in(item: MFLocation, container: Iterable[MFLocation], tol: float = 1e-06, crs: int | str | CRS = 4326) -> bool: ...
+def fuzzy_in(
+    item: MFLocation, container: Iterable[MFLocation], tol: float = 1e-06, crs: int | str | CRS = 4326
+) -> bool: ...
