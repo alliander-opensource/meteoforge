@@ -26,9 +26,18 @@ jobs:
       - name: Set up Python
         uses: actions/setup-python@a309ff8b426b58ec0e2a45f0f869d46889d02405 # v6.2.0
         with:
-          python-version: '3.11'
-      - name: Install Atheris
-        run: pip install atheris
+          python-version: '3.13'
+      - name: Install Poetry
+        run: |
+          curl -sSL https://install.python-poetry.org | python3 -
+          export PATH="$HOME/.local/bin:$PATH"
+      - name: Install dependencies
+        run: |
+          export PATH="$HOME/.local/bin:$PATH"
+          poetry install --no-interaction --with dev
+      - name: Show poetry.lock for debugging
+        run: cat poetry.lock
       - name: Run Python fuzz tests
         run: |
-          python3 -m atheris tests/fuzz/test_fuzz_example.py || true
+          export PATH="$HOME/.local/bin:$PATH"
+          poetry run python -m atheris tests/fuzz/test_fuzz_example.py || true
