@@ -11,6 +11,9 @@ on:
       - development
       - release/**
 
+permissions:
+  contents: read
+
 jobs:
   enforce:
     permissions:
