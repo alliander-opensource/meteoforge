@@ -23,7 +23,7 @@ pyproj = "^3.7.2"
 colorlog = "^6.10.1"
 pydantic = "^2.13.3"
 xarray = "^2026.4.0"
-zarr = "^3.1.6"
+zarr = "^3.2.0"
 numpy = "^2.4.4"
 netcdf4 = "^1.7.4"
 dask = "^2026.3.0"
@@ -44,7 +44,7 @@ atheris = "^3.0.0"
 
 
 [tool.poetry.group.docs.dependencies]
-zensical = "^0.0.37"
+zensical = "^0.0.39"
 
 [build-system]
 requires = ["poetry-core"]
