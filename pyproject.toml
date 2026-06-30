@@ -21,30 +21,30 @@ documentation = "https://github.com/alliander-opensource/meteoforge"
 [tool.poetry.dependencies]
 pyproj = "^3.7.2"
 colorlog = "^6.10.1"
-pydantic = "^2.13.3"
+pydantic = "^2.13.4"
 xarray = "^2026.4.0"
-zarr = "^3.1.6"
-numpy = "^2.4.4"
+zarr = "^3.2.1"
+numpy = "^2.5.0"
 netcdf4 = "^1.7.4"
-dask = "^2026.3.0"
+dask = "^2026.6.0"
 shapely = "^2.1.2"
 
 [tool.poetry.group.dev.dependencies]
-coverage = "^7.13.5"
-pytest = "^9.0.3"
+coverage = "^7.14.3"
+pytest = "^9.1.1"
 pre-commit = "^4.6.0"
-ruff = "^0.15.12"
-mypy = "^1.20.2"
+ruff = "^0.15.20"
+mypy = "^2.1.0"
 fawltydeps = "^0.20.0"
 types-pyyaml = "^6.0.12"
 pytest-cov = "^7.1.0"
 reuse = "^6.2.0"
 types-shapely = "^2.1.0"
-atheris = "^3.0.0"
+atheris = "^3.1.0"
 
 
 [tool.poetry.group.docs.dependencies]
-zensical = "^0.0.37"
+zensical = "^0.0.46"
 
 [build-system]
 requires = ["poetry-core"]
