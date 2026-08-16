@@ -1,15 +1,9 @@
-# SPDX-FileCopyrightText: 2026 2025-2026 Contributors to the MeteoForge project
-#
-# SPDX-License-Identifier: MPL-2.0
-
 from abc import ABC
 from enum import Enum, auto
 from typing import ClassVar
 
 
 class ProjectionType(Enum):
-    """Enumeration of projection types."""
-
     NONE = auto()
     NOWCAST = auto()
     FORECAST = auto()
@@ -23,8 +17,6 @@ class MeteoProjectionHandlerModel(ABC):
     capabilities.
     """
 
-    forecast_support: ClassVar[ProjectionType]
+    forecast_support = ClassVar[ProjectionType]
 
-    def __init__(self):
-        """Initialize the projection handler."""
-        raise NotImplementedError("This method should be implemented by subclasses.")
+    def __init__(self): ...

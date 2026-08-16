@@ -1,7 +1,3 @@
-# SPDX-FileCopyrightText: 2026 2025-2026 Contributors to the MeteoForge project
-#
-# SPDX-License-Identifier: MPL-2.0
-
 import logging
 from abc import ABC, abstractmethod
 from enum import Enum, auto
@@ -11,8 +7,6 @@ from meteoforge.spatial_temporal.locations import MFLocation
 
 
 class SpatialType(Enum):
-    """Enum to represent different types of spatial management."""
-
     GRIDPOINT = auto()  # Represents a grid point in a spatial grid.
     LOCATION = auto()  # Represents a specific location described by the class itself.
 
@@ -20,7 +14,7 @@ class SpatialType(Enum):
 class SpatialManagementModel(ABC):
     """Base class for spatial management handlers."""
 
-    spatial_type: ClassVar[SpatialType]
+    spatial_type = ClassVar[SpatialType]
 
     def __init__(self):
         """Initializes the spatial management handler."""

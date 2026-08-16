@@ -1,6 +1,4 @@
 # SPDX-FileCopyrightText: 2025-2026 Contributors to the MeteoForge project
-# SPDX-FileCopyrightText: 2026 2025-2026 Contributors to the MeteoForge project
-#
 # SPDX-License-Identifier: MPL-2.0
 
 """Hybrid location module: easy use, CRS-flexible, fuzzy equality, and robust containment."""
