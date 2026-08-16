@@ -10,136 +10,162 @@ authors = [
 ]
 license = { text = "MPL2.0" }
 readme = "README.md"
-requires-python = ">=3.13,<3.14"  # 3.14 not supported yet by all dependencies (Atheris, PyProj)
-dynamic = ["dependencies"]
+requires-python = ">=3.13,<3.15"  # 3.14 not supported yet by all dependencies (Atheris, PyProj)
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.13",
+    "Programming Language :: Python :: 3.14",
+]
+dependencies = [
+    "pyproj>=3.7.2,<4.0.0",
+    "pydantic>=2.13.3,<3.0.0",
+    "shapely>=2.1.2,<3.0.0",
+    "pyyaml>=6.0.3",
+    "typing-extensions>=4.16.0",
+]
 
-[tool.poetry.urls]
-homepage = "https://github.com/alliander-opensource/meteoforge"
-repository = "https://github.com/alliander-opensource/meteoforge"
-documentation = "https://github.com/alliander-opensource/meteoforge"
+[dependency-groups]
+dev = [
+    "coverage>=7.13.5,<8.0.0",
+    "pytest>=9.0.3,<10.0.0",
+    "pre-commit>=4.6.0,<5.0.0",
+    "ruff>=0.15.12,<1.0.0",
+    "mypy>=2.3.0,<3.0.0",
+    "fawltydeps>=0.20.0,<1.0.0",
+    "types-pyyaml>=6.0.12,<7.0.0",
+    "pytest-cov>=7.1.0,<8.0.0",
+    "reuse>=6.2.0,<7.0.0",
+    "types-shapely>=2.1.0,<3.0.0",
+    "atheris>=3.0.0,<4.0.0",
+]
+docs = [
+    "zensical>=0.0.37,<1.0.0"
+]
 
-[tool.poetry.dependencies]
-pyproj = "^3.7.2"
-colorlog = "^6.10.1"
-pydantic = "^2.13.3"
-xarray = "^2026.4.0"
-zarr = "^3.1.6"
-numpy = "^2.4.4"
-netcdf4 = "^1.7.4"
-dask = "^2026.3.0"
-shapely = "^2.1.2"
-
-[tool.poetry.group.dev.dependencies]
-coverage = "^7.13.5"
-pytest = "^9.0.3"
-pre-commit = "^4.6.0"
-ruff = "^0.15.12"
-mypy = "^1.20.2"
-fawltydeps = "^0.20.0"
-types-pyyaml = "^6.0.12"
-pytest-cov = "^7.1.0"
-reuse = "^6.2.0"
-types-shapely = "^2.1.0"
-atheris = "^3.0.0"
-
-
-[tool.poetry.group.docs.dependencies]
-zensical = "^0.0.37"
+[project.urls]
+Homepage = "https://github.com/alliander-opensource/meteoforge"
+Documentation = "https://alliander-opensource.github.io/meteoforge/"
+Repository = "https://github.com/alliander-opensource/meteoforge"
+Issues = "https://github.com/alliander-opensource/meteoforge/issues"
+Changelog = "https://github.com/alliander-opensource/meteoforge/releases"
 
 [build-system]
-requires = ["poetry-core"]
-build-backend = "poetry.core.masonry.api"
+requires = ["uv_build>=0.11.17,<0.12.0"]
+build-backend = "uv_build"
+
+[tool.uv]
+exclude-newer = "7 days"
+
+[tool.uv.build-backend]
+module-root = "src"
 
 [tool.ruff]
-output-format = "github"
 line-length = 120
-show-fixes = true
-exclude = [
-    ".bzr",
-    ".direnv",
-    ".eggs",
-    ".git",
-    ".git-rewrite",
-    ".hg",
-    ".ipynb_checkpoints",
-    ".mypy_cache",
-    ".nox",
-    ".pants.d",
-    ".pyenv",
-    ".pytest_cache",
-    ".pytype",
-    ".ruff_cache",
-    ".svn",
-    ".tox",
-    ".venv",
-    ".vscode",
-    "__pypackages__",
-    "_build",
-    "buck-out",
-    "build",
-    "dist",
-    "node_modules",
-    "site-packages",
-    "venv",
-    "migrations",
-]
+indent-width = 4
 
 [tool.ruff.lint]
 select = [
+    # pycodestyle
     "E",
+    # Pyflake
     "F",
+    # pyupgrade
     "UP",
+    # flake8-bugbear
     "B",
+    # flake8-simplify
     "SIM",
+    # isort
     "I",
+    # pydocstyle
     "D",
+    # flake8-bandit
+    "S",
+    # flake8-logging
+    "LOG"
 ]
-ignore = [
-    "D100",
-    "D104",
-    "D203",
-    "D213",
-]
+ignore = ["D100", "D104"]
+
+# Allow fix for all enabled rules (when `--fix`) is provided.
+fixable = ["ALL"]
+unfixable = []
+
+[tool.ruff.lint.pydocstyle]
+convention = "google"
 
 [tool.ruff.lint.per-file-ignores]
-"conftest.py" = ["E501"]
+"tests/**/*.py" = ["S101", "D100", "D101", "D102", "D103", "D104", "D105", "D107"]
 
-[tool.mypy]
-packages = ["src.meteoforge"]
-plugins = []
-python_version = "3.13"
-strict = true
-exclude = ["tests/*", ".venv/*"]
-disable_error_code = []
-follow_imports = "normal"
-ignore_missing_imports = false
-show_error_codes = true
-namespace_packages = true
-explicit_package_bases = true
-check_untyped_defs = true
-allow_redefinition = true
-no_implicit_optional = true
-install_types = true
-non_interactive = true
-enable_error_code = []
-files = ["src/meteoforge/spatial_temporal/locations.py"]
+[tool.ruff.format]
+# Use double quotes for strings.
+quote-style = "double"
 
-[tool.pylint.format]
-max-line-length = 120
+# Indent with spaces, rather than tabs.
+indent-style = "space"
+
+# Respect magic trailing commas.
+skip-magic-trailing-comma = false
+
+# Like Black, automatically detect the appropriate line ending.
+line-ending = "auto"
+
+# Enable auto-formatting of code examples in docstrings. Markdown,
+# reStructuredText code/literal blocks and doctests are all supported.
+#
+# This is currently disabled by default, but it is planned for this
+# to be opt-out in the future.
+docstring-code-format = false
+
+# Set the line length limit used when formatting code snippets in
+# docstrings.
+#
+# This only has an effect when the `docstring-code-format` setting is
+# enabled.
+docstring-code-line-length = "dynamic"
+
+[tool.ruff.lint.pylint]
+max-args = 10
 
 [tool.pytest.ini_options]
 addopts = [
+    "-rfEX -p pytester --strict-markers -n auto",
     "--cov",
     "--cov-branch",
     "--cov-report=xml",
-    "--cov-report=term-missing"
+    "--cov-report=term-missing"  # Coverage report incl missing lines in terminal
 ]
-minversion = "8.4.1"
 testpaths = ["tests"]
 
 [tool.coverage.run]
-relative_files = false
-omit = [
-    "tests/*",
-    ".venv/*",
+branch = true
+
+[tool.coverage.paths]
+source = ["meteoforge"]
+
+[tool.coverage.report]
+# Regexes for lines to exclude from consideration
+exclude_also = [
+    # Don't complain about missing debug-only code:
+    "def __repr__",
+    "if self\\.debug",
+    # Don't complain if tests don't reach defensive assertion code:
+    "raise AssertionError",
+    "raise NotImplementedError",
+    # Don't complain if non-runnable code isn't run:
+    "if 0:",
+    "if __name__ == .__main__.:",
+    # Don't complain about abstract methods, they aren't run:
+    "@(abc\\.)?abstractmethod", # Disabled for now
 ]
+ignore_errors = true
+
+[tool.coverage.html]
+directory = "coverage_html_report"
+
+[tool.mypy]
+plugins = ['pydantic.mypy']
+exclude = '^(\.venv/|info/|dist/|coverage_html_report/|tests/)'
+
+[[tool.mypy.overrides]]
+module = ["mkdocs_gen_files"]
+ignore_missing_imports = true
