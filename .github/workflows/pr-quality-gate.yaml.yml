@@ -23,9 +23,10 @@ jobs:
       pull-requests: write
     name: pre-commit
     if: ${{ !github.event.pull_request.draft }}
-    runs-on: ubuntu-latest
+    runs-on:
+      group: managed
     steps:
-      - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
       # NOTE: point "uses:" to the DIRECTORY that contains action.yaml
       # If your composite is at ./pre-commit/action.yaml, use "./pre-commit"
       - name: Run pre-commit composite
@@ -39,12 +40,13 @@ jobs:
       pull-requests: write
     name: pytest
     if: ${{ !github.event.pull_request.draft }}
-    runs-on: ubuntu-latest
+    runs-on:
+      group: managed
     strategy:
       matrix:
         python-version: ${{ fromJSON(vars.SUPPORTED_PYTHON_VERSIONS) }}
     steps:
-      - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
       - name: Run pytest composite
         uses: ./.github/workflows/pytest
         with:
@@ -56,13 +58,14 @@ jobs:
       pull-requests: write
     name: pytest (Windows, non-blocking)
     if: ${{ !github.event.pull_request.draft }}
-    runs-on: windows-latest
+    runs-on:
+      group: managed
     continue-on-error: true
     strategy:
       matrix:
         python-version: ${{ fromJSON(vars.SUPPORTED_PYTHON_VERSIONS) }}
     steps:
-      - uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4.3.1
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
       - name: Run pytest composite
         uses: ./.github/workflows/pytest
         with:
@@ -74,10 +77,11 @@ jobs:
       pull-requests: write
     name: SonarQube
     if: ${{ !github.event.pull_request.draft }}
-    runs-on: ubuntu-latest
+    runs-on:
+      group: managed
     needs: [ pytest ]        # starts only after pytest completes
     steps:
-      - uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4.3.1
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
       - name: Run SonarCloud composite
         uses: ./.github/workflows/sonar
         with:
