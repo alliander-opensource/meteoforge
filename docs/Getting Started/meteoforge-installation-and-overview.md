@@ -23,19 +23,19 @@ Regardless of context, the `meteoforge` package can be directly installed from P
 **Using pip:**
 
 ``` bash
-pip install transformer-thermal-model
+pip install meteoforge
 ```
 
 **Adding to a project using Poetry:**
 
 ``` bash
-poetry add transformer-thermal-model
+poetry add meteoforge
 ```
 
 **Adding to a project using UV:**
 
 ``` bash
-uv add transformer-thermal-model
+uv add meteoforge
 ```
 
 ## Verifying the installation
