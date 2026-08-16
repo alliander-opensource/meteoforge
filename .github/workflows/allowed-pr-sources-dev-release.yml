@@ -1,5 +1,7 @@
-name: Check if PR source branch is allowed for development or release branches
+# SPDX-FileCopyrightText: 2025-2026 Contributors to the MeteoForge project
+# SPDX-License-Identifier: MPL-2.0
 
+name: Check if PR source branch is allowed for development or release branches
 
 on:
   pull_request:
@@ -8,11 +10,19 @@ on:
       - development
       - release/**
 
+permissions:
+  contents: read
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+
 jobs:
   enforce:
     permissions:
       contents: read
-    runs-on: ubuntu-latest
+    runs-on:
+      group: managed
     steps:
       - name: Check PR source branch
         env:

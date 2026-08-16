@@ -1,9 +1,15 @@
+# SPDX-FileCopyrightText: 2025-2026 Contributors to the MeteoForge project
+# SPDX-License-Identifier: MPL-2.0
+
 name: "PR Quality Gate: rc & main"
 
 on:
   pull_request:
     branches: [ rc, main ]
     types: [ opened, synchronize, reopened, ready_for_review ]
+
+permissions:
+  contents: read
 
 
 concurrency:
@@ -17,15 +23,16 @@ jobs:
       pull-requests: write
     name: pre-commit
     if: ${{ !github.event.pull_request.draft }}
-    runs-on: ubuntu-latest
+    runs-on:
+      group: managed
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
       # NOTE: point "uses:" to the DIRECTORY that contains action.yaml
       # If your composite is at ./pre-commit/action.yaml, use "./pre-commit"
       - name: Run pre-commit composite
         uses: ./.github/workflows/pre-commit
         with:
-          python-version: ${{ env.MAIN_PYTHON_VERSION }}
+          python-version: ${{ vars.MAIN_PYTHON_VERSION }}
 
   pytest:
     permissions:
@@ -33,12 +40,13 @@ jobs:
       pull-requests: write
     name: pytest
     if: ${{ !github.event.pull_request.draft }}
-    runs-on: ubuntu-latest
+    runs-on:
+      group: managed
     strategy:
       matrix:
-        python-version: ${{ fromJSON(env.SUPPORTED_PYTHON_VERSIONS) }}
+        python-version: ${{ fromJSON(vars.SUPPORTED_PYTHON_VERSIONS) }}
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
       - name: Run pytest composite
         uses: ./.github/workflows/pytest
         with:
@@ -50,13 +58,14 @@ jobs:
       pull-requests: write
     name: pytest (Windows, non-blocking)
     if: ${{ !github.event.pull_request.draft }}
-    runs-on: windows-latest
+    runs-on:
+      group: managed
     continue-on-error: true
     strategy:
       matrix:
-        python-version: ${{ fromJSON(env.SUPPORTED_PYTHON_VERSIONS) }}
+        python-version: ${{ fromJSON(vars.SUPPORTED_PYTHON_VERSIONS) }}
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
       - name: Run pytest composite
         uses: ./.github/workflows/pytest
         with:
@@ -68,10 +77,11 @@ jobs:
       pull-requests: write
     name: SonarQube
     if: ${{ !github.event.pull_request.draft }}
-    runs-on: ubuntu-latest
+    runs-on:
+      group: managed
     needs: [ pytest ]        # starts only after pytest completes
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
       - name: Run SonarCloud composite
         uses: ./.github/workflows/sonar
         with:

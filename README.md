@@ -1,5 +1,7 @@
-[//]: # (SPDX-FileCopyrightText: 2024-2025 Copyright Contributors to the MeteoForge project)
-[//]: # (SPDX-License-Identifier: MPL-2.0)
+<!--
+  SPDX-FileCopyrightText: 2025-2026 Contributors to the MeteoForge project
+  SPDX-License-Identifier: MPL-2.0
+-->
 
 # MeteoForge - Core System
 
@@ -73,7 +75,7 @@ parameters. Unit conversion is handled with [Pint](https://pint.readthedocs.io/)
 > _speed" in m/s._
 > _The Core System can convert Beaufort to m/s using its registry of standard parameters and Pint-based conversions._
 
-## How to install MeteoForge
+## How to install
 
 You can install the MeteoForge Core System via pip or poetry.
 
