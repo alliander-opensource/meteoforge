@@ -14,11 +14,16 @@ on:
 permissions:
   contents: read
 
+concurrency:
+  group: ${{ github.workflow }}-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+
 jobs:
   enforce:
     permissions:
       contents: read
-    runs-on: ubuntu-latest
+    runs-on:
+      group: managed
     steps:
       - name: Check PR source branch
         env:
