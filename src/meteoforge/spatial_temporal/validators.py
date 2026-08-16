@@ -92,7 +92,7 @@ def validate_location(x: int | float, y: int | float, crs: CRS) -> bool:
     Evaluate the x and y coordinates as valid for the given CRS, e.g., check if they fall within the valid range for
     the CRS. This may involve checking if the coordinates are within the bounds of the CRS's valid area.
 
-    Attributes
+    Attributes:
     ----------
     x (int | float):
             The x-coordinate of the location. Typically, this represents longitude, but this can vary based on the
@@ -104,7 +104,7 @@ def validate_location(x: int | float, y: int | float, crs: CRS) -> bool:
             The coordinate reference system of the location. This is used to properly interpret the x and y coordinates
             in a geographic context.
 
-    Returns
+    Returns:
     -------
     bool
         True if the location is valid for the given CRS, False otherwise.
