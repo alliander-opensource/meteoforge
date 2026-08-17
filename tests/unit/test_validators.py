@@ -25,11 +25,11 @@ def test_validate_mf_location_invalid_type() -> None:
     """Test invalid types for validate_mf_location."""
     crs = CRS.from_epsg(4326)
     with pytest.raises(TypeError):
-        validate_mf_location("x", 0, crs)
+        validate_mf_location("x", 0, crs)  # type: ignore[arg-type]
     with pytest.raises(TypeError):
-        validate_mf_location(0, "y", crs)
+        validate_mf_location(0, "y", crs)  # type: ignore[arg-type]
     with pytest.raises(TypeError):
-        validate_mf_location(0, 0, "not_a_crs")
+        validate_mf_location(0, 0, "not_a_crs")  # type: ignore[arg-type]
 
 
 def test_validate_crs_valid() -> None:

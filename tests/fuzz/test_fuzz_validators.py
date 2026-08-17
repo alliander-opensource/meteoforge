@@ -3,12 +3,15 @@
 """Fuzz tests for validators.py using Atheris."""
 
 import contextlib
+import logging
 import sys
 
 import atheris
 from pyproj import CRS
 
 from meteoforge.spatial_temporal import validators
+
+logger = logging.getLogger(__name__)
 
 
 def fuzz_target(data: bytes) -> None:
@@ -35,8 +38,8 @@ def fuzz_target(data: bytes) -> None:
         # Fuzz validate_crs
         with contextlib.suppress(Exception):
             validators.validate_crs(crs_val)
-    except Exception:
-        pass
+    except Exception as e:
+        logger.warning("Exception occurred during fuzzing: %s", e)
 
 
 def main() -> None:
