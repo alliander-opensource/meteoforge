@@ -85,8 +85,8 @@ With pip:
 pip install meteoforge
 ```
 
-With poetry:
+With uv:
 
 ```sh
-poetry add meteoforge
+uv add meteoforge
 ```
