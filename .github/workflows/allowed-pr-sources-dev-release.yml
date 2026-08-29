@@ -22,8 +22,7 @@ jobs:
   enforce:
     permissions:
       contents: read
-    runs-on:
-      group: managed
+    runs-on: mgd-ubuntu24-x64-4c16g
     steps:
       - name: Check PR source branch
         env:

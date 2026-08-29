@@ -18,7 +18,7 @@ classifiers = [
 ]
 dependencies = [
     "pyproj>=3.7.2,<4.0.0",
-    "pydantic>=2.13.3,<3.0.0",
+    "pydantic>=2.13.4,<3.0.0",
     "shapely>=2.1.2,<3.0.0",
     "pyyaml>=6.0.3",
     "typing-extensions>=4.16.0",
@@ -26,20 +26,21 @@ dependencies = [
 
 [dependency-groups]
 dev = [
-    "coverage>=7.13.5,<8.0.0",
-    "pytest>=9.0.3,<10.0.0",
-    "pre-commit>=4.6.0,<5.0.0",
-    "ruff>=0.15.12,<1.0.0",
+    "coverage>=7.15.2,<8.0.0",
+    "pytest>=9.1.1,<10.0.0",
+    "pre-commit>=4.6.1,<5.0.0",
+    "ruff>=0.16.0,<1.0.0",
     "mypy>=2.3.0,<3.0.0",
     "fawltydeps>=0.20.0,<1.0.0",
     "types-pyyaml>=6.0.12,<7.0.0",
     "pytest-cov>=7.1.0,<8.0.0",
     "reuse>=6.2.0,<7.0.0",
     "types-shapely>=2.1.0,<3.0.0",
-    "atheris>=3.0.0,<4.0.0",
+    "atheris>=3.1.0,<4.0.0",
+    "deptry>=0.25.1",
 ]
 docs = [
-    "zensical>=0.0.37,<1.0.0"
+    "zensical>=0.0.51,<1.0.0"
 ]
 
 [project.urls]
@@ -164,7 +165,7 @@ directory = "coverage_html_report"
 
 [tool.mypy]
 plugins = ['pydantic.mypy']
-exclude = '^(\.venv/|info/|dist/|coverage_html_report/|tests/)'
+exclude = '^(\.venv/|info/|dist/|coverage_html_report/|tests/|typings/)'
 
 [[tool.mypy.overrides]]
 module = ["mkdocs_gen_files"]
