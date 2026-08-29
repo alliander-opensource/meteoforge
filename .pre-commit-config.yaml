@@ -25,7 +25,7 @@ repos:
     hooks:
       # Run the linter.
       - id: ruff
-        args: ["--fix"]
+        args: [ "--fix" ]
       # Run the formatter.
       - id: ruff-format
 
@@ -33,34 +33,34 @@ repos:
     rev: v1.19.1
     hooks:
       - id: mypy
-        additional_dependencies: ["types-shapely"]
+        additional_dependencies: [ "types-shapely", "pydantic" ]
+        exclude: ^typings/
 
   - repo: https://github.com/compilerla/conventional-pre-commit
     rev: v4.4.0
     hooks:
       - id: conventional-pre-commit
-        stages: [commit-msg]
-        args: []
+        stages: [ commit-msg ]
+        args: [ ]
 
   - repo: https://github.com/codespell-project/codespell
     rev: v2.4.2
     hooks:
-    - id: codespell
-      exclude: >
-        (?x)^(
-            LICENSES/.*
-            | .*\.svg
-            | .*\.lock
-        )$
+      - id: codespell
+        exclude: >
+          (?x)^(
+              LICENSES/.*
+              | .*\.svg
+              | .*\.lock
+          )$
 
-  - repo: https://gitlab.com/smop/pre-commit-hooks
-    rev: v1.0.0
+  - repo: https://github.com/astral-sh/uv-pre-commit
+    rev: 0.12.3
     hooks:
-    - id: check-poetry
-      args: ['--lock']
+      - id: uv-lock
 
   - repo: https://github.com/igorshubovych/markdownlint-cli
     rev: v0.48.0
     hooks:
-    - id: markdownlint
-      args: [ "--config", ".markdownlint.yaml" ]
+      - id: markdownlint
+        args: [ "--config", ".markdownlint.yaml" ]

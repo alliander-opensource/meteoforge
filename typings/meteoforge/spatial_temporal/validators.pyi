@@ -3,9 +3,8 @@
 
 from typing import Any
 
-from pyproj import CRS
-
 from meteoforge.logging.logging import logger as logger
+from pyproj import CRS
 
 class CRSValidationError(ValueError): ...
 
