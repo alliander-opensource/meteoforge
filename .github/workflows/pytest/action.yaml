@@ -1,0 +1,34 @@
+# SPDX-FileCopyrightText: 2025-2026 Contributors to the MeteoForge project
+# SPDX-License-Identifier: MPL-2.0
+
+name: 'PyTest'
+description: 'Run pytest with Poetry'
+inputs:
+  python-version:
+    required: true
+    description: 'Python version used.'
+
+runs:
+  using: 'composite'
+  steps:
+    - name: Checkout repository
+      uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+    - name: Set up Python
+      uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97 # v7.0.0
+      with:
+        python-version: ${{ inputs.python-version }}
+    - name: Install Poetry
+      shell: bash
+      run: pipx install poetry
+    - name: Install dependencies
+      shell: bash
+      run: poetry install --with dev
+    - name: Run tests
+      shell: bash
+      run: poetry run pytest -m "not unstable and not online"
+    - name: Upload coverage.xml as artifact
+      uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
+      if: ${{ hashFiles('coverage.xml') != '' }}
+      with:
+        name: coverage.xml
+        path: ./coverage.xml

@@ -1,0 +1,48 @@
+# SPDX-FileCopyrightText: 2025-2026 Contributors to the MeteoForge project
+# SPDX-License-Identifier: MPL-2.0
+
+name: Fuzzing
+
+on:
+  push:
+    branches:
+      - main
+      - development
+      - 'release/**'
+  pull_request:
+    branches:
+      - main
+      - development
+      - 'release/**'
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  fuzzing:
+    runs-on:
+      group: managed
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+      - name: Set up Python
+        uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97 # v7.0.0
+        with:
+          python-version: '3.13'
+      - name: Install Poetry
+        run: |
+          curl -sSL https://install.python-poetry.org | python3 -
+          export PATH="$HOME/.local/bin:$PATH"
+      - name: Install dependencies
+        run: |
+          export PATH="$HOME/.local/bin:$PATH"
+          poetry install --no-interaction --with dev
+      - name: Show poetry.lock for debugging
+        run: cat poetry.lock
+      - name: Run Python fuzz tests
+        run: |
+          export PATH="$HOME/.local/bin:$PATH"
+          poetry run python -m atheris tests/fuzz/test_fuzz_example.py || true

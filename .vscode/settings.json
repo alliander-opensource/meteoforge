@@ -1,0 +1,33 @@
+{
+    "sonarlint.connectedMode.project": {
+        "connectionId": "alliander-opensource",
+        "projectKey": "alliander-opensource_meteoforge"
+    },
+    "python.defaultInterpreterPath": "",
+    "python.terminal.activateEnvironment": true,
+    "psi-header.lang-config": [
+        {
+            "language": "python",
+            "begin": "",
+            "prefix": "# ",
+            "end": "",
+            "blankLinesAfter": 1
+        }
+    ],
+    "psi-header.templates": [
+        {
+            "language": "*",
+            "template": [
+                "SPDX-FileCopyrightText: 2025-<<year>> Contributors to the MeteoForge project",
+                "SPDX-License-Identifier: MPL-2.0"
+            ]
+        }
+    ],
+    "psi-header.config.forceToTop": true,
+    "psi-header.changes-tracking.enforceHeader": true,
+    "python.testing.pytestArgs": [
+        "tests"
+    ],
+    "python.testing.unittestEnabled": false,
+    "python.testing.pytestEnabled": true
+}
