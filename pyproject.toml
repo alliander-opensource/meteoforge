@@ -37,6 +37,7 @@ dev = [
     "reuse>=6.2.0,<7.0.0",
     "types-shapely>=2.1.0,<3.0.0",
     "atheris>=3.1.0,<4.0.0",
+    "deptry>=0.25.1",
 ]
 docs = [
     "zensical>=0.0.51,<1.0.0"
