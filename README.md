@@ -12,7 +12,8 @@
 [![Vulnerabilities](https://sonarcloud.io/api/project_badges/measure?project=alliander-opensource_meteoforge&metric=vulnerabilities)](https://sonarcloud.io/summary/new_code?id=alliander-opensource_meteoforge)
 [![Bugs](https://sonarcloud.io/api/project_badges/measure?project=alliander-opensource_meteoforge&metric=bugs)](https://sonarcloud.io/summary/new_code?id=alliander-opensource_meteoforge)
 [![Coverage](https://sonarcloud.io/api/project_badges/measure?project=alliander-opensource_meteoforge&metric=coverage)](https://sonarcloud.io/summary/new_code?id=alliander-opensource_meteoforge)
-[![OpenSSF Scorecard](https://api.scorecard.dev/projects/github.com/alliander-opensource/meteoforge/badge)](https://scorecard.dev/viewer/?uri=github.com/alliander-opensource/meteoforge)
+<!--[![OpenSSF Scorecard](https://api.scorecard.dev/projects/github.com/alliander-opensource/meteoforge/badge)](https://scorecard.dev/viewer/?uri=github.com/alliander-opensource/meteoforge)-->
+![Temp Badge](https://img.shields.io/badge/OpenSSF%20(Official%20Badge%20Pending)-8.9-blue) <!-- Awaiting the possibility to upload OpenSSF scan results to their official servers -->
 
 ![MeteoForge logo](/docs/images/meteoforge_logo.png)
 
