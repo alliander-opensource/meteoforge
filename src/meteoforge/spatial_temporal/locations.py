@@ -7,9 +7,10 @@
 from collections.abc import Iterable
 from typing import Any
 
-from meteoforge.spatial_temporal.validators import validate_mf_location
 from pyproj import CRS, Transformer
 from shapely.geometry import Point, Polygon
+
+from meteoforge.spatial_temporal.validators import validate_mf_location
 
 
 def _crs_to_obj(crs_like: int | str | CRS) -> CRS:
@@ -19,9 +20,7 @@ def _crs_to_obj(crs_like: int | str | CRS) -> CRS:
     return CRS.from_user_input(value=crs_like)
 
 
-def _transform_point(
-    x: float, y: float, from_crs: CRS, to_crs: CRS
-) -> tuple[float, float]:
+def _transform_point(x: float, y: float, from_crs: CRS, to_crs: CRS) -> tuple[float, float]:
     """Transform a point (x, y) from one CRS to another."""
     if from_crs == to_crs:
         return x, y
@@ -47,9 +46,7 @@ class MFLocation:
         x2, y2 = _transform_point(self.x, self.y, self.crs, target_crs_obj)
         return MFLocation(x2, y2, target_crs_obj)
 
-    def equals(
-        self, other: "MFLocation", tol: float = 1e-6, crs: int | str | CRS = 4326
-    ) -> bool:
+    def equals(self, other: "MFLocation", tol: float = 1e-6, crs: int | str | CRS = 4326) -> bool:
         """Check if two locations are close enough in a common CRS."""
         # Compare in a common CRS (default: WGS84)
         crs_obj = _crs_to_obj(crs)
@@ -71,9 +68,7 @@ class MFLocation:
 class MFLocationList:
     """A class representing a list of MFLocation objects, with fuzzy containment and CRS handling."""
 
-    def __init__(
-        self, locations: Iterable[MFLocation] | None = None, crs: int | str | CRS = 4326
-    ):
+    def __init__(self, locations: Iterable[MFLocation] | None = None, crs: int | str | CRS = 4326):
         """Create a list of locations, converting all to the given CRS."""
         self.crs = _crs_to_obj(crs)
         self.locations: list[MFLocation] = []
@@ -125,9 +120,7 @@ class MFLocationList:
 class MFLocationVector:
     """A vector (polygon) of MFLocation objects, with fuzzy containment and CRS handling."""
 
-    def __init__(
-        self, locations: Iterable[MFLocation] | None = None, crs: int | str | CRS = 4326
-    ):
+    def __init__(self, locations: Iterable[MFLocation] | None = None, crs: int | str | CRS = 4326):
         """Create a vector (polygon) from locations, converting all to the given CRS."""
         self.crs = _crs_to_obj(crs)
         self.locations: list[MFLocation] = []
@@ -212,6 +205,4 @@ def fuzzy_in(
     """Check if a location is 'fuzzily' in a container (list/vector), CRS-aware."""
     crs_obj = _crs_to_obj(crs)
     item_in_crs = item.to(crs_obj)
-    return any(
-        loc.to(crs_obj).equals(item_in_crs, tol=tol, crs=crs_obj) for loc in container
-    )
+    return any(loc.to(crs_obj).equals(item_in_crs, tol=tol, crs=crs_obj) for loc in container)

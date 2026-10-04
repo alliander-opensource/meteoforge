@@ -13,7 +13,15 @@ class GridpointManager(SpatialManagementModel):
     """This class is responsible for managing gridpoint spatial data in the MeteoForge framework."""
 
     def find_nearest(self, location: MFLocation) -> dict:
-        pass
+        """Find the nearest gridpoint to the given location.
+
+        Args:
+            location (MFLocation): The location to find the nearest gridpoint for.
+
+        Returns:
+            dict: A dictionary containing information about the nearest gridpoint.
+        """
+        raise NotImplementedError("The find_nearest method must be implemented by the subclass.")
 
     spatial_type = SpatialType.GRIDPOINT
 

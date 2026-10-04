@@ -81,11 +81,7 @@ def validate_crs(crs: Any) -> bool:
         )
 
     # Check that the CRS is either geographic, geocentric, or projected, as these are the types supported by MFLocation
-    if (
-        not crs_object.is_geographic
-        and not crs_object.is_geocentric
-        and not crs_object.is_projected
-    ):
+    if not crs_object.is_geographic and not crs_object.is_geocentric and not crs_object.is_projected:
         raise CRSValidationError(
             "The MFLocation class type only supports Geographic (CRS.is_geographic=True), Geocentric Coordinate "
             "Systems (CRS.is_geocentric=True) and Projected Coordinate Systems (CRS.is_projected=True)."
@@ -129,14 +125,10 @@ def validate_location(x: int | float, y: int | float, crs: CRS) -> bool:
     max_x, max_y = transformer.transform(area_of_use.east, area_of_use.north)
 
     if not (min_x <= x <= max_x):
-        raise CRSValidationError(
-            f"x coordinate {x} is outside valid bounds [{min_x}, {max_x}] for CRS {crs}"
-        )
+        raise CRSValidationError(f"x coordinate {x} is outside valid bounds [{min_x}, {max_x}] for CRS {crs}")
 
     if not (min_y <= y <= max_y):
-        raise CRSValidationError(
-            f"y coordinate {y} is outside valid bounds [{min_y}, {max_y}] for CRS {crs}"
-        )
+        raise CRSValidationError(f"y coordinate {y} is outside valid bounds [{min_y}, {max_y}] for CRS {crs}")
 
     logger.debug("Location validation passed and valid: x=%s, y=%s, CRS=%s", x, y, crs)
     return True
