@@ -19,8 +19,7 @@ concurrency:
 
 jobs:
   enforce:
-    runs-on:
-      group: managed
+    runs-on: mgd-ubuntu24-x64-4c16g
     permissions:
       contents: read
       pull-requests: read

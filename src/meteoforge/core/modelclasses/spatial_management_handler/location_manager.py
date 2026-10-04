@@ -1,9 +1,13 @@
 # SPDX-FileCopyrightText: 2026 2025-2026 Contributors to the MeteoForge project
 #
 # SPDX-License-Identifier: MPL-2.0
+
 from abc import abstractmethod
 
-from meteoforge.core.modelclasses.spatial_management_handler.base_model import SpatialManagementModel, SpatialType
+from meteoforge.core.modelclasses.spatial_management_handler.base_model import (
+    SpatialManagementModel,
+    SpatialType,
+)
 from meteoforge.spatial_temporal.locations import MFLocation
 
 

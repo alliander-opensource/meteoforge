@@ -5,19 +5,20 @@
 
 """Module for validating spatial and temporal data in MeteoForge."""
 
+import logging
 from typing import Any
 
 from pyproj import CRS, Transformer
 from pyproj.exceptions import CRSError
 
-from meteoforge.logging.logging import logger
+logger = logging.getLogger(__name__)
 
 
 class CRSValidationError(ValueError):
     """Raised when a CRS validation fails in MFLocation."""
 
 
-def validate_mf_location(x: int | float, y: int | float, crs: CRS) -> bool:
+def validate_mf_location(x: float, y: float, crs: CRS) -> bool:
     """Validate a given x,y location with an EPSG code as a valid coordinate for MeteoForge."""
     # Perform type checks on the input parameters
     _perform_mf_location_type_checks(x, y, crs)

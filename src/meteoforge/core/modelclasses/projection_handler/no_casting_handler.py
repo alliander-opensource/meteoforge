@@ -2,7 +2,10 @@
 #
 # SPDX-License-Identifier: MPL-2.0
 
-from meteoforge.core.modelclasses.projection_handler.base_model import MeteoProjectionHandlerModel, ProjectionType
+from meteoforge.core.modelclasses.projection_handler.base_model import (
+    MeteoProjectionHandlerModel,
+    ProjectionType,
+)
 
 
 class MeteoNoCastingHandler(MeteoProjectionHandlerModel):

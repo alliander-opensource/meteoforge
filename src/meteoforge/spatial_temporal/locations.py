@@ -1,5 +1,4 @@
 # SPDX-FileCopyrightText: 2025-2026 Contributors to the MeteoForge project
-# SPDX-FileCopyrightText: 2026 2025-2026 Contributors to the MeteoForge project
 #
 # SPDX-License-Identifier: MPL-2.0
 
@@ -197,7 +196,12 @@ class MFLocationVector:
 # Utility: fuzzy membership for a location in a list/vector
 
 
-def fuzzy_in(item: MFLocation, container: Iterable[MFLocation], tol: float = 1e-6, crs: int | str | CRS = 4326) -> bool:
+def fuzzy_in(
+    item: MFLocation,
+    container: Iterable[MFLocation],
+    tol: float = 1e-6,
+    crs: int | str | CRS = 4326,
+) -> bool:
     """Check if a location is 'fuzzily' in a container (list/vector), CRS-aware."""
     crs_obj = _crs_to_obj(crs)
     item_in_crs = item.to(crs_obj)

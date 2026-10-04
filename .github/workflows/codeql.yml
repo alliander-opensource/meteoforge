@@ -12,6 +12,11 @@ on:
   schedule:
     - cron: '37 23 * * 4'
 
+permissions:
+  actions: read
+  contents: read
+  security-events: write
+
 jobs:
   analyze:
     name: Analyze (${{ matrix.language }})
@@ -20,8 +25,7 @@ jobs:
     #   - https://gh.io/supported-runners-and-hardware-resources
     #   - https://gh.io/using-larger-runners (GitHub.com only)
     # Consider using larger runners or machines with greater resources for possible analysis time improvements.
-    runs-on:
-      group: managed-linux
+    runs-on: mgd-ubuntu24-x64-4c16g
     permissions:
       # required for all workflows
       security-events: write

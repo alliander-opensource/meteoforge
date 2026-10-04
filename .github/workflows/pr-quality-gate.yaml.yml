@@ -23,8 +23,7 @@ jobs:
       pull-requests: write
     name: pre-commit
     if: ${{ !github.event.pull_request.draft }}
-    runs-on:
-      group: managed
+    runs-on: mgd-ubuntu24-x64-4c16g
     steps:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
       # NOTE: point "uses:" to the DIRECTORY that contains action.yaml
@@ -40,8 +39,7 @@ jobs:
       pull-requests: write
     name: pytest
     if: ${{ !github.event.pull_request.draft }}
-    runs-on:
-      group: managed
+    runs-on: mgd-ubuntu24-x64-4c16g
     strategy:
       matrix:
         python-version: ${{ fromJSON(vars.SUPPORTED_PYTHON_VERSIONS) }}
@@ -58,8 +56,7 @@ jobs:
       pull-requests: write
     name: pytest (Windows, non-blocking)
     if: ${{ !github.event.pull_request.draft }}
-    runs-on:
-      group: managed
+    runs-on: mgd-ubuntu24-x64-4c16g
     continue-on-error: true
     strategy:
       matrix:
@@ -77,8 +74,7 @@ jobs:
       pull-requests: write
     name: SonarQube
     if: ${{ !github.event.pull_request.draft }}
-    runs-on:
-      group: managed
+    runs-on: mgd-ubuntu24-x64-4c16g
     needs: [ pytest ]        # starts only after pytest completes
     steps:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
