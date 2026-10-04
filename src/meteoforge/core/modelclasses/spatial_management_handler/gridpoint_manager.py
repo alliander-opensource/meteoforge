@@ -2,11 +2,18 @@
 #
 # SPDX-License-Identifier: MPL-2.0
 
-from meteoforge.core.modelclasses.spatial_management_handler.base_model import SpatialManagementModel, SpatialType
+from meteoforge.core.modelclasses.spatial_management_handler.base_model import (
+    SpatialManagementModel,
+    SpatialType,
+)
+from meteoforge.spatial_temporal.locations import MFLocation
 
 
 class GridpointManager(SpatialManagementModel):
     """This class is responsible for managing gridpoint spatial data in the MeteoForge framework."""
+
+    def find_nearest(self, location: MFLocation) -> dict:
+        pass
 
     spatial_type = SpatialType.GRIDPOINT
 
