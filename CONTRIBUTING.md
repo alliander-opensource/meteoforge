@@ -29,18 +29,16 @@ This includes any JS/CSS files served to browsers.
     SPDX-FileCopyrightText: 2019-2025 Alliander N.V.
     SPDX-License-Identifier: MPL-2.0
 
-## Git branching
+## GitHub Flow
 
-This project uses the [Gitflow Workflow](https://www.atlassian.com/git/tutorials/comparing-workflows/gitflow-workflow)
-branching model.
+This project uses a lightweight GitHub Flow:
 
-- The `master` branch always contains the latest release.
-- New feature branches are branched off from `develop`.
-- Finished features are merged back into `develop`.
-- At the end of a sprint, `develop` is merged into `master`, or optionally into a `release` branch before merging into
-  `master`.
+- Keep `main` releasable.
+- Create short-lived feature or fix branches from `main`.
+- Open a pull request to merge changes into `main`; review and required checks must pass before merging.
+- Publish releases from version tags on `main`.
 
-![Gitflow](docs/images/gitflow.svg)
+![GitHub Flow](docs/images/github-flow.svg)
 
 ## Code reviews
 
@@ -56,8 +54,8 @@ if you're unfamiliar with the process.
 
 ### Steps to follow
 
-1. Create a topic branch in your local repository named like: `feature-[description]`.
-   See the [Git branching guideline](#git-branching) for naming conventions.
+1. Create a short-lived topic branch from `main`, named like `feature-[description]` or `fix-[description]`.
+   See the [GitHub Flow](#github-flow) guidelines.
 
 2. Make changes, compile, and test thoroughly.
    Ensure all install/build dependencies are removed by the end of the build process.

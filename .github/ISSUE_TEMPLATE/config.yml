@@ -1,0 +1,11 @@
+# SPDX-FileCopyrightText: 2025-2026 Contributors to the MeteoForge project
+# SPDX-License-Identifier: MPL-2.0
+
+blank_issues_enabled: false
+contact_links:
+  - name: MeteoForge documentation
+    url: https://alliander-opensource.github.io/meteoforge/
+    about: Check the documentation for usage guidance.
+  - name: Report a security vulnerability
+    url: https://www.alliander.com/en/coordinated-vulnerability-disclosure/
+    about: Report security issues privately through Alliander's vulnerability disclosure process.

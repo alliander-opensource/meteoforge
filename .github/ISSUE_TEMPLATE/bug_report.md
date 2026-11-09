@@ -1,9 +1,9 @@
 ---
-name: Bug Report
-about: Help us improve by reporting a bug
-title: ''
-labels: ''
-assignees: ''
+name: Bug report
+about: Report a problem with MeteoForge
+title: ""
+labels: ""
+assignees: ""
 ---
 
 <!--
@@ -11,38 +11,26 @@ assignees: ''
   SPDX-License-Identifier: MPL-2.0
 -->
 
-## **Describe the Bug**
+## Describe the problem
 
-Provide a clear and concise description of the issue.
+What happened? Please include any error messages.
 
-## **To Reproduce**
+## Steps to reproduce
 
-Steps to reproduce the behavior:
+1. ...
+2. ...
+3. ...
 
-1. Go to '...'
-2. Click on '...'
-3. Scroll down to '...'
-4. See the error.
+## Expected behavior
 
-## **Expected Behavior**
+What did you expect to happen?
 
-Describe what you expected to happen.
+## Environment
 
-## **Screenshots**
+- MeteoForge version:
+- Python version:
+- Operating system:
 
-If applicable, add screenshots to help explain the problem.
+## Additional context
 
-## **Desktop (please complete the following information):**
-
-- **OS**: [e.g., iOS]
-- **Project Version**: [e.g., 22]
-
-## **Smartphone (please complete the following information):**
-
-- **Device**: [e.g., iPhone 6]
-- **OS**: [e.g., iOS 8.1]
-- **Project Version**: [e.g., 22]
-
-## **Additional Context**
-
-Add any other context about the problem here.
+Include any other details that may help reproduce or understand the problem. Remove credentials, personal information, and confidential data before posting.

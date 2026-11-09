@@ -1,9 +1,9 @@
 ---
-name: Feature Request
-about: Suggest an idea to improve this project
-title: ''
-labels: ''
-assignees: ''
+name: Feature request
+about: Suggest an improvement to MeteoForge
+title: ""
+labels: ""
+assignees: ""
 ---
 
 <!--
@@ -11,18 +11,18 @@ assignees: ''
   SPDX-License-Identifier: MPL-2.0
 -->
 
-## **Is Your Feature Request Related to a Problem? Please Describe**
+## What problem would this solve?
 
-Provide a clear and concise description of the problem. For example: "I'm frustrated when [...]"
+Describe the need or problem behind your request.
 
-## **Describe the Solution You'd Like**
+## What would you like to happen?
 
-Explain what you want to happen in a clear and concise manner.
+Describe the solution or behavior you have in mind.
 
-## **Describe Alternatives You've Considered**
+## Alternatives considered
 
-List any alternative solutions or features you’ve thought about.
+Describe any alternative solutions or workarounds you have considered.
 
-## **Additional Context**
+## Additional context
 
-Add any other context, screenshots, or examples to support your request.
+Add any examples or context that would help explain the request.

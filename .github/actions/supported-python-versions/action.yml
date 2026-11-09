@@ -1,0 +1,49 @@
+# SPDX-FileCopyrightText: 2025-2026 Contributors to the MeteoForge project
+# SPDX-License-Identifier: MPL-2.0
+
+name: Get supported Python versions
+description: Read the discrete supported Python versions from pyproject.toml
+outputs:
+  python-versions:
+    description: JSON array of supported Python versions
+    value: ${{ steps.extract.outputs.python-versions }}
+runs:
+  using: composite
+  steps:
+    - name: Set up Python
+      uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97 # v7.0.0
+      with:
+        python-version: "3.13"
+
+    - name: Extract supported versions
+      id: extract
+      shell: bash
+      run: |
+        python - <<'PY'
+        import json
+        import os
+        import re
+        import tomllib
+        from pathlib import Path
+
+        with Path("pyproject.toml").open("rb") as pyproject_file:
+            project = tomllib.load(pyproject_file)["project"]
+
+        versions = {
+            classifier.rsplit("::", maxsplit=1)[1].strip()
+            for classifier in project.get("classifiers", [])
+            if re.fullmatch(
+                r"Programming Language :: Python :: 3\.\d+",
+                classifier,
+            )
+        }
+        ordered_versions = sorted(
+            versions,
+            key=lambda version: tuple(map(int, version.split("."))),
+        )
+        if not ordered_versions:
+            raise SystemExit("No discrete supported Python versions found in project classifiers.")
+
+        with open(os.environ["GITHUB_OUTPUT"], "a", encoding="utf-8") as output:
+            output.write(f"python-versions={json.dumps(ordered_versions)}\n")
+        PY

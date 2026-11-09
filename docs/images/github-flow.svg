@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  SPDX-FileCopyrightText: 2026 Contributors to the MeteoForge project
+  SPDX-License-Identifier: MPL-2.0
+-->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 540" role="img" aria-labelledby="title description">
+  <title id="title">GitHub Flow workflow</title>
+  <desc id="description">Short-lived feature or fix branches are reviewed and checked in pull requests, merged into releasable main, and released from version tags.</desc>
+  <defs>
+    <marker id="arrow-main" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto">
+      <path d="M1 1 11 6 1 11" fill="none" stroke="#26415f" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+    </marker>
+    <marker id="arrow-feature" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto">
+      <path d="M1 1 11 6 1 11" fill="none" stroke="#6941a5" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+    </marker>
+    <marker id="arrow-callout" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto">
+      <path d="M1 1 9 5 1 9" fill="none" stroke="#52677f" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"/>
+    </marker>
+  </defs>
+  <rect width="1200" height="540" fill="#f5f8fc" rx="24"/>
+
+  <text x="600" y="52" fill="#172b45" font-family="Arial, Helvetica, sans-serif" font-size="30" font-weight="700" text-anchor="middle">GitHub Flow</text>
+  <text x="600" y="82" fill="#52677f" font-family="Arial, Helvetica, sans-serif" font-size="17" text-anchor="middle">Short-lived branches, reviewed pull requests, releasable main</text>
+
+  <rect x="420" y="112" width="300" height="78" fill="#ffffff" stroke="#b8c5d4" stroke-width="2" rx="14"/>
+  <text x="570" y="143" fill="#172b45" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="700" text-anchor="middle">Pull request</text>
+  <text x="570" y="169" fill="#52677f" font-family="Arial, Helvetica, sans-serif" font-size="15" text-anchor="middle">Review + CI checks</text>
+  <path d="M570 191v22" fill="none" marker-end="url(#arrow-callout)" stroke="#52677f" stroke-width="2"/>
+
+  <rect x="818" y="128" width="245" height="76" fill="#ffffff" stroke="#b8c5d4" stroke-width="2" rx="14"/>
+  <text x="940" y="159" fill="#172b45" font-family="Arial, Helvetica, sans-serif" font-size="17" font-weight="700" text-anchor="middle">Release from main</text>
+  <text x="940" y="184" fill="#52677f" font-family="Arial, Helvetica, sans-serif" font-size="15" text-anchor="middle">Create a version tag</text>
+  <path d="M940 205v139" fill="none" marker-end="url(#arrow-callout)" stroke="#52677f" stroke-width="2"/>
+
+  <path d="M95 360h1000" fill="none" marker-end="url(#arrow-main)" stroke="#26415f" stroke-linecap="round" stroke-width="8"/>
+  <path d="M310 360c0-80 32-145 105-145h300c73 0 105 65 105 145" fill="none" marker-end="url(#arrow-feature)" stroke="#6941a5" stroke-linecap="round" stroke-width="6"/>
+
+  <circle cx="170" cy="360" r="11" fill="#ffffff" stroke="#26415f" stroke-width="5"/>
+  <circle cx="310" cy="360" r="11" fill="#ffffff" stroke="#26415f" stroke-width="5"/>
+  <circle cx="415" cy="215" r="10" fill="#ffffff" stroke="#6941a5" stroke-width="5"/>
+  <circle cx="520" cy="215" r="10" fill="#ffffff" stroke="#6941a5" stroke-width="5"/>
+  <circle cx="625" cy="215" r="10" fill="#ffffff" stroke="#6941a5" stroke-width="5"/>
+  <circle cx="730" cy="360" r="11" fill="#ffffff" stroke="#26415f" stroke-width="5"/>
+  <circle cx="880" cy="360" r="11" fill="#ffffff" stroke="#26415f" stroke-width="5"/>
+  <circle cx="940" cy="360" r="11" fill="#ffffff" stroke="#26415f" stroke-width="5"/>
+
+  <rect x="432" y="263" width="266" height="38" fill="#eee8f8" rx="19"/>
+  <text x="565" y="288" fill="#50317f" font-family="Arial, Helvetica, sans-serif" font-size="16" font-weight="700" text-anchor="middle">Short-lived feature / fix branch</text>
+
+  <text x="95" y="407" fill="#26415f" font-family="Arial, Helvetica, sans-serif" font-size="17" font-weight="700">main</text>
+  <text x="95" y="432" fill="#52677f" font-family="Arial, Helvetica, sans-serif" font-size="15">Always kept releasable</text>
+  <text x="730" y="407" fill="#26415f" font-family="Arial, Helvetica, sans-serif" font-size="16" font-weight="700" text-anchor="middle">Merge after review + checks</text>
+  <text x="940" y="407" fill="#26415f" font-family="Arial, Helvetica, sans-serif" font-size="16" font-weight="700" text-anchor="middle">v3.0.0</text>
+  <text x="940" y="432" fill="#52677f" font-family="Arial, Helvetica, sans-serif" font-size="14" text-anchor="middle">release tag</text>
+</svg>

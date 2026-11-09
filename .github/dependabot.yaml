@@ -8,9 +8,9 @@
 
 version: 2
 updates:
-  - package-ecosystem: "pip"
+  - package-ecosystem: "uv"
     reviewers:
-      - "rflinnenbank"
+    - "raoul-linnenbank"
     directory: "/"
     schedule:
       interval: "weekly"
@@ -22,6 +22,6 @@ updates:
   - package-ecosystem: "github-actions"
     directory: "/"
     reviewers:
-      - "rflinnenbank"
+    - "raoul-linnenbank"
     schedule:
       interval: "weekly"
