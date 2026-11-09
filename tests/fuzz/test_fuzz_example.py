@@ -7,7 +7,7 @@ import sys
 import atheris
 
 
-@atheris.instrument_func
+@atheris.instrument_func  # type: ignore[attr-defined]
 def fuzz_target(data: bytes) -> None:
     """Fuzz target example function that takes a byte string as input and performs some operations on it."""
     try:

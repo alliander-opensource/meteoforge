@@ -9,11 +9,11 @@ import atheris
 from pyproj import CRS
 from pyproj.exceptions import CRSError
 
-with atheris.instrument_imports(include=["meteoforge"]):
+with atheris.instrument_imports(include=["meteoforge"]):  # type: ignore[attr-defined]
     from meteoforge.spatial_temporal import validators
 
 
-@atheris.instrument_func
+@atheris.instrument_func  # type: ignore[attr-defined]
 def fuzz_target(data: bytes) -> None:
     """Fuzz target for validators.py."""
     crs_val = data.decode("utf-8", errors="ignore")
